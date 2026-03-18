@@ -4,6 +4,8 @@ This repository adds a transport electrification overlay to `GCAM v7.0` without 
 
 The design goal is to keep the implementation consistent with GCAM's existing transport structure and energy accounting while making EV adoption assumptions transparent and reproducible.
 
+The repository is also being prepared for future modular demand-side overlays beyond EV. The next planned extension is a dedicated `data center sector` overlay in the building/commercial demand system. See [docs/datacenter_sector_plan.md](docs/datacenter_sector_plan.md).
+
 ## What This Add-on Changes
 
 - Adds `transportation_EV_SSP1.xml` to `transportation_EV_SSP5.xml` overlays for the GCAM `trn_pass_road_LDV_4W` sector.
@@ -167,6 +169,7 @@ generated/output/queries/EV_SSP_queries.xml
 scripts/check_batch_alignment.py
 scripts/plot_validation_results.py
 docs/figures/*.png
+docs/datacenter_sector_plan.md
 ```
 
 ## Validation
@@ -243,6 +246,10 @@ The completed validation shows that:
 ### Primary energy delta by fuel across all SSPs and years
 
 ![Primary energy delta by fuel across all SSPs and years](docs/figures/primary_energy_fuel_delta.png)
+
+## Future Extension
+
+The next planned module is a distinct `data center sector`, modeled as an additional commercial building service rather than a direct primary-energy shock. The design note is in [docs/datacenter_sector_plan.md](docs/datacenter_sector_plan.md).
 
 To verify that the EV batch keeps all non-transport SSP inputs aligned with the stock GCAM SSP batch:
 
