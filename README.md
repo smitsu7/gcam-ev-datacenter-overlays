@@ -1,12 +1,12 @@
-# GCAM EV SSP Add-on
+# GCAM EV and Data Center Sector Overlays
 
-This repository adds a transport electrification overlay to `GCAM v7.0` without modifying GCAM C++ source code. The add-on installs scenario-specific XML overlays so that `SSP1` to `SSP5` can represent a more explicit light-duty vehicle transition with separate `BEV`, `PHEV`, `FCEV`, `Hybrid Liquids`, `Liquids`, and `NG` pathways.
+This repository is for `EV` and future `data center sector` overlays for `GCAM v7.0` without modifying GCAM C++ source code. The currently implemented module is a transport electrification overlay so that `SSP1` to `SSP5` can represent a more explicit light-duty vehicle transition with separate `BEV`, `PHEV`, `FCEV`, `Hybrid Liquids`, `Liquids`, and `NG` pathways.
 
-The design goal is to keep the implementation consistent with GCAM's existing transport structure and energy accounting while making EV adoption assumptions transparent and reproducible.
+The design goal is to keep the EV module and the future data center sector module consistent with GCAM's demand structure and energy accounting while making additional sector assumptions transparent and reproducible.
 
 The repository is also being prepared for future modular demand-side overlays beyond EV. The next planned extension is a dedicated `data center sector` overlay in the building/commercial demand system. See [docs/datacenter_sector_plan.md](docs/datacenter_sector_plan.md).
 
-## What This Add-on Changes
+## What The Current EV Module Changes
 
 - Adds `transportation_EV_SSP1.xml` to `transportation_EV_SSP5.xml` overlays for the GCAM `trn_pass_road_LDV_4W` sector.
 - Keeps `BEV`, `FCEV`, `Hybrid Liquids`, `Liquids`, and `NG` as distinct transport technologies.
