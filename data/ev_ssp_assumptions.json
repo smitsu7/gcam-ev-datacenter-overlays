@@ -1,0 +1,167 @@
+{
+  "anchor_years": [2020, 2025, 2030, 2035, 2040, 2045, 2050],
+  "future_years": [2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065, 2070, 2075, 2080, 2085, 2090, 2095, 2100],
+  "base_transport_files": {
+    "SSP1": "transportation_UCD_SSP1.xml",
+    "SSP2": "transportation_UCD_CORE.xml",
+    "SSP3": "transportation_UCD_SSP3.xml",
+    "SSP4": "transportation_UCD_SSP3.xml",
+    "SSP5": "transportation_UCD_SSP5.xml"
+  },
+  "share_weights": {
+    "SSP1": {
+      "BEV": [0.10, 0.30, 0.55, 0.85, 1.20, 1.45, 1.70],
+      "PHEV": [0.08, 0.18, 0.25, 0.24, 0.20, 0.14, 0.08],
+      "FCEV": [0.02, 0.05, 0.10, 0.18, 0.28, 0.40, 0.55],
+      "Hybrid Liquids": [0.90, 1.00, 0.95, 0.80, 0.60, 0.45, 0.30],
+      "Liquids": [0.85, 0.75, 0.65, 0.50, 0.40, 0.30, 0.22],
+      "NG": [0.60, 0.55, 0.45, 0.35, 0.28, 0.22, 0.18]
+    },
+    "SSP2": {
+      "BEV": [0.05, 0.15, 0.30, 0.50, 0.75, 0.95, 1.10],
+      "PHEV": [0.06, 0.12, 0.18, 0.18, 0.15, 0.11, 0.07],
+      "FCEV": [0.01, 0.03, 0.06, 0.10, 0.16, 0.22, 0.30],
+      "Hybrid Liquids": [0.95, 1.00, 1.00, 0.90, 0.75, 0.60, 0.45],
+      "Liquids": [1.00, 0.95, 0.90, 0.80, 0.70, 0.60, 0.50],
+      "NG": [0.80, 0.75, 0.65, 0.55, 0.45, 0.35, 0.28]
+    },
+    "SSP3": {
+      "BEV": [0.01, 0.04, 0.10, 0.18, 0.28, 0.38, 0.48],
+      "PHEV": [0.02, 0.05, 0.08, 0.08, 0.07, 0.06, 0.05],
+      "FCEV": [0.00, 0.01, 0.03, 0.05, 0.08, 0.12, 0.16],
+      "Hybrid Liquids": [0.90, 0.95, 1.00, 0.95, 0.88, 0.80, 0.72],
+      "Liquids": [1.10, 1.05, 1.00, 0.95, 0.90, 0.85, 0.80],
+      "NG": [0.95, 0.90, 0.85, 0.78, 0.72, 0.65, 0.58]
+    },
+    "SSP4": {
+      "BEV": [0.01, 0.04, 0.10, 0.18, 0.28, 0.38, 0.48],
+      "PHEV": [0.02, 0.05, 0.08, 0.08, 0.07, 0.06, 0.05],
+      "FCEV": [0.00, 0.01, 0.03, 0.05, 0.08, 0.12, 0.16],
+      "Hybrid Liquids": [0.90, 0.95, 1.00, 0.95, 0.88, 0.80, 0.72],
+      "Liquids": [1.10, 1.05, 1.00, 0.95, 0.90, 0.85, 0.80],
+      "NG": [0.95, 0.90, 0.85, 0.78, 0.72, 0.65, 0.58]
+    },
+    "SSP5": {
+      "BEV": [0.08, 0.22, 0.42, 0.68, 0.95, 1.20, 1.40],
+      "PHEV": [0.07, 0.14, 0.20, 0.19, 0.16, 0.12, 0.08],
+      "FCEV": [0.02, 0.05, 0.10, 0.16, 0.24, 0.34, 0.46],
+      "Hybrid Liquids": [0.92, 0.98, 0.96, 0.84, 0.68, 0.52, 0.38],
+      "Liquids": [0.95, 0.90, 0.82, 0.72, 0.60, 0.48, 0.36],
+      "NG": [0.70, 0.64, 0.56, 0.48, 0.40, 0.32, 0.24]
+    }
+  },
+  "cost_multipliers": {
+    "SSP1": {
+      "BEV": [0.95, 0.92, 0.88, 0.84, 0.82, 0.80, 0.78],
+      "FCEV": [0.98, 0.95, 0.90, 0.86, 0.83, 0.81, 0.79],
+      "PHEV": [0.98, 0.96, 0.93, 0.90, 0.88, 0.87, 0.86]
+    },
+    "SSP2": {
+      "BEV": [0.98, 0.96, 0.93, 0.90, 0.88, 0.86, 0.84],
+      "FCEV": [1.00, 0.98, 0.95, 0.92, 0.89, 0.87, 0.85],
+      "PHEV": [1.00, 0.98, 0.95, 0.93, 0.91, 0.89, 0.88]
+    },
+    "SSP3": {
+      "BEV": [1.04, 1.03, 1.01, 0.99, 0.98, 0.97, 0.96],
+      "FCEV": [1.06, 1.05, 1.03, 1.01, 1.00, 0.99, 0.98],
+      "PHEV": [1.03, 1.02, 1.00, 0.99, 0.98, 0.97, 0.96]
+    },
+    "SSP4": {
+      "BEV": [1.04, 1.03, 1.01, 0.99, 0.98, 0.97, 0.96],
+      "FCEV": [1.06, 1.05, 1.03, 1.01, 1.00, 0.99, 0.98],
+      "PHEV": [1.03, 1.02, 1.00, 0.99, 0.98, 0.97, 0.96]
+    },
+    "SSP5": {
+      "BEV": [0.96, 0.93, 0.89, 0.85, 0.82, 0.80, 0.78],
+      "FCEV": [0.99, 0.96, 0.92, 0.88, 0.85, 0.83, 0.81],
+      "PHEV": [0.99, 0.96, 0.92, 0.89, 0.87, 0.86, 0.85]
+    }
+  },
+  "coefficient_multipliers": {
+    "SSP1": {
+      "BEV": [0.99, 0.98, 0.96, 0.94, 0.93, 0.92, 0.90],
+      "FCEV": [1.00, 0.99, 0.97, 0.95, 0.93, 0.92, 0.90],
+      "PHEV": [1.00, 0.99, 0.98, 0.96, 0.95, 0.94, 0.93]
+    },
+    "SSP2": {
+      "BEV": [1.00, 0.99, 0.98, 0.96, 0.95, 0.94, 0.93],
+      "FCEV": [1.01, 1.00, 0.99, 0.97, 0.96, 0.95, 0.94],
+      "PHEV": [1.01, 1.00, 0.99, 0.98, 0.97, 0.96, 0.95]
+    },
+    "SSP3": {
+      "BEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
+      "FCEV": [1.03, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
+      "PHEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97]
+    },
+    "SSP4": {
+      "BEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
+      "FCEV": [1.03, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
+      "PHEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97]
+    },
+    "SSP5": {
+      "BEV": [1.00, 0.99, 0.97, 0.95, 0.94, 0.93, 0.91],
+      "FCEV": [1.01, 1.00, 0.98, 0.96, 0.94, 0.93, 0.91],
+      "PHEV": [1.01, 1.00, 0.99, 0.97, 0.96, 0.95, 0.94]
+    }
+  },
+  "phev": {
+    "cost_blend": {
+      "BEV": 0.40,
+      "Hybrid Liquids": 0.60
+    },
+    "capital_coef_blend": {
+      "BEV": 0.40,
+      "Hybrid Liquids": 0.60
+    },
+    "liquids_coefficient_source": "Hybrid Liquids",
+    "utility_factor": {
+      "SSP1": [0.55, 0.58, 0.60, 0.62, 0.64, 0.65, 0.66],
+      "SSP2": [0.52, 0.54, 0.56, 0.58, 0.60, 0.61, 0.62],
+      "SSP3": [0.45, 0.47, 0.49, 0.50, 0.52, 0.53, 0.54],
+      "SSP4": [0.45, 0.47, 0.49, 0.50, 0.52, 0.53, 0.54],
+      "SSP5": [0.53, 0.56, 0.59, 0.61, 0.62, 0.63, 0.64]
+    }
+  },
+  "query_titles": [
+    "transport final energy by tech and fuel",
+    "transport service output by tech",
+    "LDV energy by primary fuel",
+    "total final energy by aggregate sector",
+    "primary energy consumption by region (direct equivalent)",
+    "primary energy consumption by region (avg fossil efficiency)",
+    "transport tech share-weights",
+    "costs of transport techs",
+    "transport tech non-energy cost"
+  ],
+  "validation_region": "Global",
+  "validation_query_titles": [
+    "total final energy by aggregate sector",
+    "primary energy consumption by region (direct equivalent)"
+  ],
+  "reference_basis": {
+    "institutional": [
+      "IEA (2025), Global EV Outlook 2025",
+      "IEA (2025), World Energy Outlook 2025",
+      "GCAM v7.0 documentation"
+    ],
+    "academic": [
+      "Kyle and Kim (2011), Long-term implications of alternative light-duty vehicle technologies for global greenhouse gas emissions and primary energy demands",
+      "Mishra et al. (2013), Transportation Module of GCAM: Model Documentation Version 1.0",
+      "O'Neill et al. (2017), The roads ahead: Narratives for shared socioeconomic pathways describing world futures in the 21st century",
+      "Riahi et al. (2017), The shared socioeconomic pathways and their energy, land use, and greenhouse gas emissions implications: An overview"
+    ]
+  },
+  "method_notes": {
+    "share_weights": "IEA market and scenario evidence is translated into GCAM share-weights, not copied one-for-one as sales shares. Ordering is preserved across SSPs and the schedules are calibrated so BEV adoption is fastest in SSP1, central in SSP2, slowest in SSP3 and SSP4, and technology-led but not climate-constrained in SSP5.",
+    "cost_multipliers": "Technology cost schedules encode faster battery and fuel-cell learning in SSP1 and SSP5, central progress in SSP2, and slower progress in SSP3 and SSP4.",
+    "coefficient_multipliers": "Energy-intensity improvements are imposed through minicam-energy-input coefficients, with BEV and FCEV improving faster than PHEV and slower SSPs retaining higher coefficients.",
+    "phev": "PHEV is represented as a true dual-fuel transport technology with electricity and refined liquids inputs. Utility-factor schedules peak higher in faster-electrifying SSPs and lower in delayed-adoption SSPs."
+  },
+  "source_mapping": {
+    "SSP1": "IEA NZE-like upper-bound EV pathway",
+    "SSP2": "IEA STEPS-like central EV pathway",
+    "SSP3": "Below-IEA-STEPS delayed EV adoption with CPS-like policy weakness",
+    "SSP4": "Same transport EV path as SSP3 pending additional inequality-specific evidence",
+    "SSP5": "Technology-led fast EV adoption between IEA STEPS and IEA NZE"
+  }
+}

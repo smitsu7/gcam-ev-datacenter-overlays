@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ModelInterfaceBatch>
+  <class name="ModelInterface.ModelGUI2.DbViewer">
+    <command name="XMLDB Batch File">
+      <scenario name="GCAM_SSP1" />
+      <scenario name="GCAM_SSP2" />
+      <scenario name="GCAM_SSP3" />
+      <scenario name="GCAM_SSP4" />
+      <scenario name="GCAM_SSP5" />
+      <queryFile>../output/queries/EV_SSP_validation_queries.xml</queryFile>
+      <outFile>../output/ev_validation/baseline_validation.csv</outFile>
+      <xmldbLocation>../output/database_basexdb_ssp_baseline</xmldbLocation>
+      <batchQueryResultsInDifferentSheets>false</batchQueryResultsInDifferentSheets>
+      <batchQueryIncludeCharts>false</batchQueryIncludeCharts>
+      <batchQuerySplitRunsInDifferentSheets>false</batchQuerySplitRunsInDifferentSheets>
+      <batchQueryReplaceResults>true</batchQueryReplaceResults>
+      <coresToUse>2</coresToUse>
+    </command>
+    <command name="XMLDB Batch File">
+      <scenario name="GCAM_SSP1" />
+      <scenario name="GCAM_SSP2" />
+      <scenario name="GCAM_SSP3" />
+      <scenario name="GCAM_SSP4" />
+      <scenario name="GCAM_SSP5" />
+      <queryFile>../output/queries/EV_SSP_validation_queries.xml</queryFile>
+      <outFile>../output/ev_validation/ev_validation.csv</outFile>
+      <xmldbLocation>../output/database_basexdb_ev_ssp</xmldbLocation>
+      <batchQueryResultsInDifferentSheets>false</batchQueryResultsInDifferentSheets>
+      <batchQueryIncludeCharts>false</batchQueryIncludeCharts>
+      <batchQuerySplitRunsInDifferentSheets>false</batchQuerySplitRunsInDifferentSheets>
+      <batchQueryReplaceResults>true</batchQueryReplaceResults>
+      <coresToUse>2</coresToUse>
+    </command>
+  </class>
+</ModelInterfaceBatch>
