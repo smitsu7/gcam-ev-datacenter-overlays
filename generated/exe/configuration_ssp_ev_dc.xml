@@ -2,15 +2,15 @@
 <Configuration>
   <Files>
     <Value name="xmlInputFileName">../input/gcamdata/xml/modeltime.xml</Value>
-    <Value name="BatchFileName">batch_SSP_EV.xml</Value>
+    <Value name="BatchFileName">batch_SSP_EV_DC.xml</Value>
     <Value name="policy-target-file">../input/policy/forcing_target_4p5.xml</Value>
     <Value name="GHGInputFileName">../input/magicc/inputs/input_gases.emk</Value>
-    <Value write-output="1" append-scenario-name="0" name="xmldb-location">../output/database_basexdb_ev_ssp</Value>
+    <Value write-output="1" append-scenario-name="0" name="xmldb-location">../output/database_basexdb_ev_dc_ssp</Value>
     <Value write-output="1" append-scenario-name="0" name="restart">./restart/restart</Value>
     <Value write-output="1" append-scenario-name="1" name="xmlDebugFileName">debug.xml</Value>
     <Value write-output="1" append-scenario-name="0" name="climatFileName">gas.emk</Value>
     <Value write-output="1" append-scenario-name="1" name="costCurvesOutputFileName">cost_curves.xml</Value>
-    <Value write-output="1" append-scenario-name="0" name="batchCSVOutputFile">batch-csv-out-ev-ssp.csv</Value>
+    <Value write-output="1" append-scenario-name="0" name="batchCSVOutputFile">batch-csv-out-ev-dc-ssp.csv</Value>
     <Value write-output="0" append-scenario-name="0" name="supplyDemandOutputFileName">SDCurves.csv</Value>
     <Value write-output="0" append-scenario-name="0" name="flow-graph">gcam-flow-graph.dot</Value>
     <Value write-output="0" append-scenario-name="0" name="dependencyGraphName">DependencyGraph.dot</Value>

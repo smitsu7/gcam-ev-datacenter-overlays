@@ -81,6 +81,20 @@ def find_query_by_title(root: ET.Element, title: str):
     return None
 
 
+def ensure_batch_scenario_name(root: ET.Element):
+    strings = root.find("./Strings")
+    if strings is None:
+        strings = ET.SubElement(root, "Strings")
+    scenario_value = None
+    for value in strings.findall("./Value"):
+        if value.get("name") == "scenarioName":
+            scenario_value = value
+            break
+    if scenario_value is None:
+        scenario_value = ET.SubElement(strings, "Value", {"name": "scenarioName"})
+    scenario_value.text = ""
+
+
 def tech_periods_by_year(tech: ET.Element):
     return {int(period.get("year")): period for period in tech.findall("./period")}
 
@@ -285,6 +299,7 @@ def build_batch_file(gcam_root: Path):
 def build_config_file(gcam_root: Path):
     config_path = gcam_root / "exe" / "configuration_ssp.xml"
     root = ET.parse(config_path).getroot()
+    ensure_batch_scenario_name(root)
     for value in root.findall("./Files/Value"):
         if value.get("name") == "BatchFileName":
             value.text = "batch_SSP_EV.xml"
@@ -298,6 +313,7 @@ def build_config_file(gcam_root: Path):
 def build_baseline_config_file(gcam_root: Path):
     config_path = gcam_root / "exe" / "configuration_ssp.xml"
     root = ET.parse(config_path).getroot()
+    ensure_batch_scenario_name(root)
     for value in root.findall("./Files/Value"):
         if value.get("name") == "xmldb-location":
             value.text = "../output/database_basexdb_ssp_baseline"

@@ -1,0 +1,175 @@
+{
+  "model_years": [1975, 1990, 2005, 2010, 2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065, 2070, 2075, 2080, 2085, 2090, 2095, 2100],
+  "historic_zero_years": [1975, 1990, 2005, 2010],
+  "historical_seed_year": 2015,
+  "historical_seed_fraction_of_2020": 0.01,
+  "validation_region": "Global",
+  "validation_sector_name": "comm datacenter sector",
+  "near_term_twh": {
+    "2020": 300.0,
+    "2025": 430.0
+  },
+  "scenario_twh_anchors": {
+    "SSP1": {
+      "2030": 800.0,
+      "2035": 960.0
+    },
+    "SSP2": {
+      "2030": 945.0,
+      "2035": 1200.0
+    },
+    "SSP3": {
+      "2030": 620.0,
+      "2035": 700.0
+    },
+    "SSP4": {
+      "2030": 760.0,
+      "2035": 900.0
+    },
+    "SSP5": {
+      "2030": 1150.0,
+      "2035": 1700.0
+    }
+  },
+  "post_2035_growth_rates": {
+    "SSP1": {
+      "2035_to_2050": 0.02,
+      "2050_to_2100": 0.004
+    },
+    "SSP2": {
+      "2035_to_2050": 0.02,
+      "2050_to_2100": 0.006
+    },
+    "SSP3": {
+      "2035_to_2050": 0.012,
+      "2050_to_2100": 0.003
+    },
+    "SSP4": {
+      "2035_to_2050": 0.018,
+      "2050_to_2100": 0.005
+    },
+    "SSP5": {
+      "2035_to_2050": 0.022,
+      "2050_to_2100": 0.008
+    }
+  },
+  "regional_group_base_shares": {
+    "usa": 0.45,
+    "china": 0.25,
+    "europe": 0.15,
+    "japan": 0.03,
+    "advanced_apac": 0.05,
+    "emerging_asia": 0.04,
+    "latin_america": 0.015,
+    "africa_middleeast": 0.015
+  },
+  "regional_groups": {
+    "usa": ["USA"],
+    "china": ["China"],
+    "europe": ["EU-12", "EU-15", "Europe_Eastern", "Europe_Non_EU", "European Free Trade Association"],
+    "japan": ["Japan"],
+    "advanced_apac": ["Australia_NZ", "Canada", "South Korea", "Taiwan"],
+    "emerging_asia": ["India", "Indonesia", "Pakistan", "South Asia", "Southeast Asia"],
+    "latin_america": ["Argentina", "Brazil", "Central America and Caribbean", "Colombia", "Mexico", "South America_Northern", "South America_Southern"],
+    "africa_middleeast": ["Africa_Eastern", "Africa_Northern", "Africa_Southern", "Africa_Western", "Central Asia", "Middle East", "Russia", "South Africa"]
+  },
+  "scenario_group_multipliers": {
+    "SSP1": {
+      "usa": 0.98,
+      "china": 0.98,
+      "europe": 1.02,
+      "japan": 1.02,
+      "advanced_apac": 1.04,
+      "emerging_asia": 1.15,
+      "latin_america": 1.08,
+      "africa_middleeast": 1.06
+    },
+    "SSP2": {
+      "usa": 1.0,
+      "china": 1.0,
+      "europe": 1.0,
+      "japan": 1.0,
+      "advanced_apac": 1.0,
+      "emerging_asia": 1.0,
+      "latin_america": 1.0,
+      "africa_middleeast": 1.0
+    },
+    "SSP3": {
+      "usa": 1.02,
+      "china": 1.0,
+      "europe": 1.02,
+      "japan": 1.02,
+      "advanced_apac": 1.03,
+      "emerging_asia": 0.72,
+      "latin_america": 0.75,
+      "africa_middleeast": 0.78
+    },
+    "SSP4": {
+      "usa": 1.08,
+      "china": 0.96,
+      "europe": 1.1,
+      "japan": 1.08,
+      "advanced_apac": 1.12,
+      "emerging_asia": 0.62,
+      "latin_america": 0.65,
+      "africa_middleeast": 0.7
+    },
+    "SSP5": {
+      "usa": 1.0,
+      "china": 1.02,
+      "europe": 1.0,
+      "japan": 1.0,
+      "advanced_apac": 1.08,
+      "emerging_asia": 1.15,
+      "latin_america": 1.06,
+      "africa_middleeast": 1.04
+    }
+  },
+  "query_titles": [
+    "total final energy by sector",
+    "total final energy by aggregate sector",
+    "primary energy consumption by region (direct equivalent)",
+    "primary energy consumption by region (avg fossil efficiency)"
+  ],
+  "validation_query_titles": [
+    "total final energy by sector",
+    "total final energy by aggregate sector",
+    "primary energy consumption by region (direct equivalent)"
+  ],
+  "reference_basis": {
+    "institutional": [
+      "IEA (2025), Energy and AI",
+      "IEA (2025), Electricity 2025",
+      "GCAM v7.0 documentation"
+    ],
+    "academic": [
+      "Masanet et al. (2020), Recalibrating global data center energy-use estimates",
+      "Shehabi et al. (2024), 2024 United States Data Center Energy Usage Report",
+      "Zhang et al. (2023), Future data center energy-conservation and emission-reduction technologies in the context of smart and low-carbon city construction",
+      "O'Neill et al. (2017), The roads ahead: Narratives for shared socioeconomic pathways describing world futures in the 21st century",
+      "Riahi et al. (2017), The shared socioeconomic pathways and their energy, land use, and greenhouse gas emissions implications: An overview"
+    ]
+  },
+  "source_mapping": {
+    "SSP1": "IEA High Efficiency-like data center demand path",
+    "SSP2": "IEA Base Case-like data center demand path",
+    "SSP3": "IEA Headwinds-like data center demand path",
+    "SSP4": "Between IEA Base Case and Headwinds with stronger advanced-region concentration",
+    "SSP5": "IEA Lift-Off-like data center demand path"
+  },
+  "method_notes": {
+    "historic": "The explicit datacenter sector is kept at zero in 1975-2010 and seeded at only 1% of the 2020 target in 2015 so GCAM's historical calibration is not overwritten by a large exogenous digital load.",
+    "2020_2035": "The 2020 and 2025 values provide a conservative bridge toward the IEA (2025) Energy and AI scenario anchors at 2030 and 2035, preserving the ordering of Headwinds, Base Case, High Efficiency, and Lift-Off style futures across SSPs.",
+    "post_2035": "Beyond the IEA horizon, the trajectories are explicit model extensions that preserve SSP ordering by using damped annual growth rates between 2035 and 2050 and lower annual growth rates between 2050 and 2100.",
+    "demand_mapping": "The global electricity pathway is regionalized using GCAM's 2015 commercial electricity calibration as the within-group split, then implemented as an independent energy-final-demand sector with region- and year-specific income elasticities solved from the target demand path and the official SSP GDP trajectories.",
+    "gcam_mapping": "The datacenter module is represented as a new electricity-only supplysector and a matching energy-final-demand sector named comm datacenter sector. Final energy therefore appears directly in GCAM final-energy queries, while primary energy remains an endogenous system response."
+  },
+  "reference_shortlist": [
+    "IEA. 2025. Energy and AI. https://www.iea.org/reports/energy-and-ai",
+    "IEA. 2025. Energy demand from AI. https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai",
+    "IEA. 2025. Electricity 2025. https://www.iea.org/reports/electricity-2025",
+    "Masanet, E., Shehabi, A., Lei, N., Smith, S. and Koomey, J. 2020. Recalibrating global data center energy-use estimates. Science 367(6481): 984-986. https://doi.org/10.1126/science.aba3758",
+    "Shehabi, A. et al. 2024. 2024 United States Data Center Energy Usage Report. Lawrence Berkeley National Laboratory. https://doi.org/10.71468/P1WC7Q",
+    "Zhang, Y. et al. 2023. Future data center energy-conservation and emission-reduction technologies in the context of smart and low-carbon city construction. Sustainable Cities and Society 89:104322. https://doi.org/10.1016/j.scs.2022.104322"
+  ]
+}
