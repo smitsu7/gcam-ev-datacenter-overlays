@@ -137,6 +137,170 @@ This combination is intentional:
 - the first three queries show the transport-side EV technology transition and carrier split
 - the latter two queries show whether electrification is flowing through to economy-wide final and primary energy accounting
 
+## Parameter Provenance
+
+The two modules do not have the same provenance status.
+
+- `Datacenter`
+  - `2030` and `2035` global electricity-demand anchors are treated as direct IEA-style case anchors in `TWh`
+  - `2020` and `2025` are bridge values introduced by this add-on
+  - `2050+` values are explicit extrapolations introduced by this add-on
+  - regional allocation and GCAM income elasticities are add-on transformations, but they are formula-based and reproducible
+- `EV`
+  - the current `share-weight`, `cost multiplier`, `coefficient multiplier`, and `PHEV utility factor` schedules are not direct IEA numeric imports
+  - they are add-on translation parameters that map IEA scenario direction into GCAM control variables
+  - therefore they should be cited as `add-on assumptions informed by IEA`, not as `IEA values`
+
+The detailed derivation note is in [parameter_provenance.md](docs/parameter_provenance.md).
+
+### Datacenter formulas used in the code
+
+The script starts from the scenario anchors in [datacenter_ssp_assumptions.json](data/datacenter_ssp_assumptions.json):
+
+- common bridge values:
+  - `2020 = 300 TWh`
+  - `2025 = 430 TWh`
+- scenario anchors:
+  - `SSP1: 2030 = 800 TWh, 2035 = 960 TWh`
+  - `SSP2: 2030 = 945 TWh, 2035 = 1200 TWh`
+  - `SSP3: 2030 = 620 TWh, 2035 = 700 TWh`
+  - `SSP4: 2030 = 760 TWh, 2035 = 900 TWh`
+  - `SSP5: 2030 = 1150 TWh, 2035 = 1700 TWh`
+
+Those values are transformed as follows:
+
+```text
+1 TWh = 0.0036 EJ
+D_global_EJ(s, t) = D_global_TWh(s, t) * 0.0036
+```
+
+```text
+D(t) = D(t_left) + (D(t_right) - D(t_left)) * (t - t_left) / (t_right - t_left)
+```
+
+for the `2020 -> 2025 -> 2030 -> 2035` interpolation, and:
+
+```text
+D(t) = D(t_prev) * (1 + g_phase)^(t - t_prev)
+```
+
+for `2035+`, where `g_phase` comes from `post_2035_growth_rates`.
+
+The regional split is:
+
+```text
+w_group_raw(g, s) = base_share(g) * multiplier(g, s)
+w_group(g, s) = w_group_raw(g, s) / sum_g w_group_raw(g, s)
+split_region(r | g) = E_comm_2015(r) / sum_{r in g} E_comm_2015(r)
+D_region(r, s, t) = D_global(s, t) * w_group(g(r), s) * split_region(r | g(r))
+```
+
+The historical seed and elasticity inversion are:
+
+```text
+D_region(r, s, 2015) = 0.01 * D_region(r, s, 2020)
+
+epsilon(r, s, t) =
+  ln(D_region(r, s, t) / D_region(r, s, t_prev)) /
+  ln(GDP(r, s, t) / GDP(r, s, t_prev))
+```
+
+Worked example, `USA`, `SSP2`:
+
+```text
+2030 global = 945 TWh * 0.0036 = 3.402 EJ
+2030 USA    = 3.402 * 0.45 = 1.5309 EJ
+2015 seed   = 0.01 * 0.4860 = 0.00486 EJ
+```
+
+Using GDP from `socioeconomics_SSP2.xml`, the generated elasticities are:
+
+```text
+epsilon_2020 = 32.1345
+epsilon_2025 = 3.1652
+epsilon_2030 = 8.3939
+```
+
+These are the exact values written into the generated datacenter XML.
+
+### EV formulas used in the code
+
+For EV, the important distinction is that the schedules in [ev_ssp_assumptions.json](data/ev_ssp_assumptions.json) are not direct IEA tables. They are the current translation layer:
+
+- `SSP1 -> NZE-like upper bound`
+- `SSP2 -> STEPS-like central case`
+- `SSP3 -> below-STEPS delayed case`
+- `SSP4 -> same transport path as SSP3 in the current version`
+- `SSP5 -> faster-than-STEPS technology-led case`
+
+The generator applies the schedule values directly at the anchor years:
+
+- `2020, 2025, 2030, 2035, 2040, 2045, 2050`
+
+and then holds the `2050` value constant through `2100`.
+
+For existing EV technologies, the script uses:
+
+```text
+capital_coef_new(t) = capital_coef_base(t) * cost_multiplier(t)
+input_cost_new(t)   = input_cost_base(t)   * cost_multiplier(t)
+energy_coef_new(t)  = energy_coef_base(t)  * coefficient_multiplier(t)
+```
+
+For `PHEV`, the script uses explicit blend formulas:
+
+```text
+capital_coef_PHEV(t) =
+  cost_multiplier_PHEV(t) *
+  [0.4 * capital_coef_BEV(t) + 0.6 * capital_coef_Hybrid(t)]
+
+input_cost_PHEV(t) =
+  cost_multiplier_PHEV(t) *
+  [0.4 * input_cost_BEV(t) + 0.6 * input_cost_Hybrid(t)]
+
+elec_coef_PHEV(t) =
+  coefficient_multiplier_PHEV(t) *
+  utility_factor(t) *
+  coef_BEV(t)
+
+liquids_coef_PHEV(t) =
+  coefficient_multiplier_PHEV(t) *
+  [1 - utility_factor(t)] *
+  coef_Hybrid(t)
+```
+
+Worked example, `USA`, `Car`, `SSP2`, `2030`:
+
+```text
+share_weight_BEV     = 0.30
+share_weight_PHEV    = 0.18
+share_weight_FCEV    = 0.06
+share_weight_Hybrid  = 1.00
+share_weight_Liquids = 0.90
+share_weight_NG      = 0.65
+
+cost_multiplier_PHEV = 0.95
+coef_multiplier_PHEV = 0.99
+utility_factor_PHEV  = 0.56
+```
+
+From the base GCAM transport file, the resulting `PHEV` values are:
+
+```text
+capital_coef_PHEV = 0.0017626561135193866
+input_cost_PHEV   = 0.21223
+elec_coef_PHEV    = 453.01595358096
+liquids_coef_PHEV = 613.5024582838798
+```
+
+This is why the honest provenance statement is:
+
+```text
+Datacenter 2030/2035 anchors: direct source anchors
+Datacenter bridge, extrapolation, and regionalization: add-on transformations
+EV schedules: add-on translation parameters informed by IEA scenario direction
+```
+
 ## Source Basis
 
 ### Primary institutional sources
@@ -265,6 +429,7 @@ scripts/plot_datacenter_validation_results.py
 scripts/plot_three_way_validation_results.py
 docs/figures/*.png
 docs/datacenter_sector_plan.md
+docs/parameter_provenance.md
 ```
 
 ## Validation
