@@ -28,6 +28,10 @@ def load_json(path: Path):
     return json.loads(path.read_text())
 
 
+def load_source_package(addon_root: Path, assumptions):
+    return load_json(addon_root / assumptions["source_package"])
+
+
 def ensure_indent(tree: ET.ElementTree):
     try:
         ET.indent(tree, space="  ")
@@ -188,64 +192,100 @@ def normalize_weights(weights):
     return {key: value / total for key, value in weights.items()}
 
 
-def build_region_weights(region_data, assumptions, ssp_name: str):
-    group_weights = {}
-    for group, base_share in assumptions["regional_group_base_shares"].items():
-        multiplier = assumptions["scenario_group_multipliers"][ssp_name].get(group, 1.0)
-        group_weights[group] = base_share * multiplier
-    group_weights = normalize_weights(group_weights)
+def build_group_member_splits(region_data, assumptions):
+    group_members = {
+        group_name: list(members)
+        for group_name, members in assumptions["regional_group_members"].items()
+    }
+    assigned_regions = {region for members in group_members.values() for region in members}
+    rest_members = sorted(set(region_data) - assigned_regions)
+    if not rest_members:
+        raise SystemExit("Rest-of-world datacenter group is empty.")
 
-    region_weights = {}
-    seen_regions = set()
-    for group, members in assumptions["regional_groups"].items():
+    group_members[assumptions["rest_of_world_group_name"]] = rest_members
+
+    splits = {}
+    for group_name, members in group_members.items():
         weights = {
             region: region_data[region]["comm_electricity_2015"]
             for region in members
         }
-        group_split = normalize_weights(weights)
-        for region, split in group_split.items():
-            region_weights[region] = group_weights[group] * split
-            seen_regions.add(region)
-
-    missing = sorted(set(region_data) - seen_regions)
-    if missing:
-        raise SystemExit(f"Regions missing from datacenter regional groups: {', '.join(missing)}")
-    return region_weights
+        splits[group_name] = normalize_weights(weights)
+    return group_members, splits
 
 
-def build_global_ej_series(assumptions, ssp_name: str):
+def build_group_twh_series(assumptions, source_package, ssp_name: str):
     years = [int(year) for year in assumptions["model_years"] if int(year) >= 2020]
-    anchor_map = {}
-    anchor_map.update(assumptions["near_term_twh"])
-    anchor_map.update(assumptions["scenario_twh_anchors"][ssp_name])
+    case_name = assumptions["scenario_to_case"][ssp_name]
 
-    pre_2035_years = [year for year in years if year <= 2035]
-    series_twh = interpolate_piecewise(anchor_map, pre_2035_years)
+    global_2020 = float(assumptions["global_twh_anchors"]["2020"])
+    global_2024 = float(assumptions["global_twh_anchors"]["2024"])
+    global_2030 = float(assumptions["global_twh_anchors"]["2030"])
+    global_2035 = float(assumptions["global_twh_anchors"]["2035_case"][case_name])
 
-    growth_rates = assumptions["post_2035_growth_rates"][ssp_name]
-    prev_year = 2035
-    prev_value = float(anchor_map["2035"])
-    for year in [year for year in years if year > 2035]:
-        phase_rate = (
-            growth_rates["2035_to_2050"]
-            if year <= 2050
-            else growth_rates["2050_to_2100"]
-        )
-        prev_value = prev_value * ((1 + phase_rate) ** (year - prev_year))
-        series_twh[year] = prev_value
-        prev_year = year
-
-    return {year: twh_to_ej(total_twh) for year, total_twh in series_twh.items()}
-
-
-def build_regional_energy_paths(region_weights, global_ej_by_year):
-    return {
-        region: {
-            year: global_ej_by_year[year] * weight
-            for year in global_ej_by_year
-        }
-        for region, weight in region_weights.items()
+    shares_2024 = assumptions["regional_anchor_shares_2024"]
+    group_2024 = {
+        group_name: global_2024 * float(share)
+        for group_name, share in shares_2024.items()
     }
+    rest_name = assumptions["rest_of_world_group_name"]
+    group_2024[rest_name] = global_2024 - sum(group_2024.values())
+
+    group_2020 = {
+        group_name: global_2020 * (value / global_2024)
+        for group_name, value in group_2024.items()
+    }
+
+    usa_2030 = group_2024["USA"] + float(
+        assumptions["regional_anchor_adjustments_2030_twh"]["USA_increment_from_2024"]
+    )
+    remaining_2030 = global_2030 - usa_2030
+    if remaining_2030 <= 0:
+        raise SystemExit("Derived 2030 non-USA datacenter demand is non-positive.")
+
+    non_usa_weights = {
+        group_name: value
+        for group_name, value in group_2024.items()
+        if group_name != "USA"
+    }
+    non_usa_total = sum(non_usa_weights.values())
+    group_2030 = {"USA": usa_2030}
+    for group_name, value in non_usa_weights.items():
+        group_2030[group_name] = remaining_2030 * (value / non_usa_total)
+
+    scale_2035 = global_2035 / global_2030
+    group_2035 = {
+        group_name: value * scale_2035
+        for group_name, value in group_2030.items()
+    }
+
+    out = {}
+    for group_name in group_2030:
+        anchor_map = {
+            2020: group_2020[group_name],
+            2024: group_2024[group_name],
+            2030: group_2030[group_name],
+            2035: group_2035[group_name],
+        }
+        pre_2035 = interpolate_piecewise(anchor_map, [year for year in years if year <= 2035])
+        for year in years:
+            if year > 2035:
+                pre_2035[year] = group_2035[group_name]
+        out[group_name] = pre_2035
+    return out
+
+
+def build_regional_energy_paths(region_data, assumptions, group_twh_series):
+    group_members, group_splits = build_group_member_splits(region_data, assumptions)
+    regional_paths = {}
+    for group_name, members in group_members.items():
+        splits = group_splits[group_name]
+        for region in members:
+            regional_paths[region] = {
+                year: twh_to_ej(group_twh_series[group_name][year] * splits[region])
+                for year in group_twh_series[group_name]
+            }
+    return regional_paths
 
 
 def solve_income_elasticity(prev_demand, curr_demand, prev_gdp, curr_gdp):
@@ -353,12 +393,11 @@ def build_final_demand(assumptions, region_path):
     return final_demand
 
 
-def build_overlay(gcam_root: Path, assumptions, ssp_name: str):
+def build_overlay(gcam_root: Path, assumptions, source_package, ssp_name: str):
     region_data = parse_region_weights_source(gcam_root)
     gdp_paths = parse_gdp_paths(gcam_root, ssp_name, assumptions["model_years"])
-    region_weights = build_region_weights(region_data, assumptions, ssp_name)
-    global_ej_by_year = build_global_ej_series(assumptions, ssp_name)
-    regional_targets = build_regional_energy_paths(region_weights, global_ej_by_year)
+    group_twh_series = build_group_twh_series(assumptions, source_package, ssp_name)
+    regional_targets = build_regional_energy_paths(region_data, assumptions, group_twh_series)
     regional_paths = build_historical_and_future_paths(assumptions, regional_targets, gdp_paths)
 
     scenario = ET.Element("scenario")
@@ -388,20 +427,39 @@ def build_query_subset(gcam_root: Path, assumptions):
     return out
 
 
+def parse_gcam_regions(gcam_root: Path):
+    building_det = ET.parse(
+        gcam_root / "input" / "gcamdata" / "xml" / "building_det.xml"
+    ).getroot()
+    return sorted(
+        {
+            region.get("name")
+            for region in building_det.findall(".//region")
+            if region.get("name")
+        }
+    )
+
+
 def build_validation_query_file(gcam_root: Path, assumptions):
     main_queries = ET.parse(
         gcam_root / "output" / "queries" / "Main_queries.xml"
     ).getroot()
 
     out = ET.Element("queries")
+    if assumptions["validation_region"] == "Global":
+        region_names = parse_gcam_regions(gcam_root)
+    else:
+        region_names = [assumptions["validation_region"]]
+
     for title in assumptions["validation_query_titles"]:
         source = find_query_by_title(main_queries, title)
         if source is None:
             raise SystemExit(f"Could not find validation query titled '{title}'")
 
-        aquery = ET.SubElement(out, "aQuery")
-        ET.SubElement(aquery, "region", {"name": assumptions["validation_region"]})
-        aquery.append(deepcopy(source))
+        for region_name in region_names:
+            aquery = ET.SubElement(out, "aQuery")
+            ET.SubElement(aquery, "region", {"name": region_name})
+            aquery.append(deepcopy(source))
     return out
 
 
@@ -581,12 +639,13 @@ def main():
     addon_root = Path(__file__).resolve().parents[1]
     generated_root = addon_root / "generated"
     assumptions = load_json(addon_root / "data" / "datacenter_ssp_assumptions.json")
+    source_package = load_source_package(addon_root, assumptions)
 
     if not args.gcam_root.exists():
         raise SystemExit(f"GCAM root not found: {args.gcam_root}")
 
     for ssp_name in SSP_NAMES:
-        overlay = build_overlay(args.gcam_root, assumptions, ssp_name)
+        overlay = build_overlay(args.gcam_root, assumptions, source_package, ssp_name)
         write_xml(
             overlay,
             generated_root / "input" / "gcamdata" / "xml" / f"datacenter_sector_{ssp_name}.xml",

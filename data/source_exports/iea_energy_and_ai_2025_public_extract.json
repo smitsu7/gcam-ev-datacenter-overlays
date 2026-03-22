@@ -1,0 +1,71 @@
+{
+  "source_id": "iea_energy_and_ai_2025_public_extract",
+  "title": "IEA Energy and AI 2025 public extract",
+  "edition_year": 2025,
+  "source_urls": [
+    "https://www.iea.org/reports/energy-and-ai/executive-summary%C2%A0",
+    "https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai"
+  ],
+  "scope_note": "This file archives only the public numeric anchors and short textual extracts that were visible on IEA public pages during the 2026-03-22 audit. It is not a raw IEA chart CSV.",
+  "public_numeric_anchors": {
+    "global_twh": {
+      "2024": 415.0,
+      "2030_base_case": 945.0,
+      "2035_base_case": 1200.0,
+      "2035_high_efficiency_case": 970.0,
+      "2035_headwinds_case": 700.0,
+      "2035_lift_off_case": 1700.0
+    },
+    "regional_share_2024": {
+      "USA": 0.45,
+      "China": 0.25,
+      "Europe": 0.15
+    },
+    "regional_increase_2024_2030_twh": {
+      "USA": 240.0
+    },
+    "historical_growth_note": {
+      "global_average_annual_growth_2019_2024_percent": 12.0
+    }
+  },
+  "derived_values": {
+    "global_twh": {
+      "2020": {
+        "value": 263.7400025380049,
+        "formula": "415.0 / (1.12 ^ 4)",
+        "note": "Back-cast from the public 2024 level and the public statement that global data-centre electricity consumption grew by around 12% per year since 2017."
+      },
+      "2025": {
+        "value": 503.3333333333333,
+        "formula": "415.0 + (945.0 - 415.0) * ((2025 - 2024) / (2030 - 2024))",
+        "note": "Linear bridge from the public 2024 and 2030 Base Case anchors."
+      }
+    },
+    "regional_twh": {
+      "2024": {
+        "USA": 186.75,
+        "China": 103.75,
+        "Europe": 62.25,
+        "Rest of world": 62.25
+      },
+      "2030": {
+        "USA": 426.75,
+        "China": 230.35714285714286,
+        "Europe": 138.21428571428572,
+        "Rest of world": 149.67857142857144
+      }
+    }
+  },
+  "public_extracts": [
+    {
+      "label": "Global and regional 2024 and 2030 anchors",
+      "source_url": "https://www.iea.org/reports/energy-and-ai/executive-summary%C2%A0",
+      "extract": "Data centres accounted for around 1.5% of the world’s electricity consumption in 2024, or 415 terawatt-hours (TWh). The United States accounted for the largest share of global data centre electricity consumption in 2024 (45%), followed by China (25%) and Europe (15%). Data centre electricity consumption is set to more than double to around 945 TWh by 2030. Our Base Case sees global data centre electricity consumption rising to around 1 200 TWh by 2035. In this case, electricity demand from data centres is 20% lower in 2035 than in the Base Case. By 2035, the range of data centre electricity demand across our cases spans from 700 to 1 700 TWh."
+    },
+    {
+      "label": "Regional 2024-2030 increase anchors",
+      "source_url": "https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai",
+      "extract": "In the United States, data centre electricity demand rises by about 240 TWh between 2024 and 2030."
+    }
+  ]
+}

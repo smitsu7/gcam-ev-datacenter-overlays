@@ -16,11 +16,9 @@ The repository is also structured so the two modules can be run separately or to
 - Adds a new `PHEV` technology as a true dual-fuel GCAM technology with:
   - `elect_td_trn`
   - `refined liquids enduse`
-- Applies SSP-specific schedules for:
-  - transport technology share-weights
-  - non-energy cost multipliers
-  - energy-intensity coefficients
-  - `PHEV` electric utility factor
+- Applies SSP-specific transport technology share-weights derived from direct IEA EV sales-share anchors.
+- Keeps inherited `BEV` and `FCEV` GCAM cost and energy coefficients unchanged, so the EV overlay is driven primarily by the documented IEA-to-share-weight translation.
+- Uses a constant `PHEV` electric utility factor of `0.55` to minimize scenario-specific author discretion.
 - Generates:
   - `generated/exe/batch_SSP_EV.xml`
   - `generated/exe/configuration_ssp_ev.xml`
@@ -72,22 +70,79 @@ This means:
 
 ### 3. SSP mapping logic
 
-The numeric schedules in this repository are not copied mechanically from IEA market shares. IEA publishes sales, stock, and scenario evidence, while GCAM uses logit-style share-weights and technology coefficients. The translation therefore follows a documented heuristic:
+The EV overlay now uses one IEA edition only:
 
-- preserve the ordering of technology adoption seen in authoritative scenario work
-- translate that ordering into GCAM share-weights rather than raw sales shares
-- apply faster cost and efficiency learning in high-innovation scenarios
-- keep `PHEV` as a transition technology that grows early and declines later as `BEV` dominates
+- `IEA (2024), Global EV Outlook 2024`
+
+The archived public source package is:
+
+- [iea_global_ev_outlook_2024_public_extract.json](/Users/sekiyamitsuna/CodexCLI/GCAM/gcam-ev-datacenter-overlays/data/source_exports/iea_global_ev_outlook_2024_public_extract.json)
+
+The scenario mapping is:
+
+- `SSP1 -> GEVO 2024 NZE`
+- `SSP2 -> GEVO 2024 STEPS`
+- `SSP3 -> GEVO 2024 STEPS`
+- `SSP4 -> GEVO 2024 STEPS`
+- `SSP5 -> GEVO 2024 APS`
+
+The EV anchors are built from public GEVO-2024 statements:
+
+- historical public anchors:
+  - `2018 = 2%`
+  - `2023 = 18%`
+- scenario public anchors:
+  - `STEPS 2030 = 40%`
+  - `STEPS 2035 = 55%`
+  - `APS 2030 = 43.72093023255814%`
+  - `APS 2035 = 66.66666666666667%`
+  - `NZE 2030 = 65%`
+  - `NZE 2035 = 100%`
+
+The calculated anchors are:
+
+```text
+share_2020
+= 2.0 * (18.0 / 2.0)^((2020 - 2018) / (2023 - 2018))
+= 4.816449370561385%
+
+share_2025(s)
+= 18.0 + (share_2030(s) - 18.0) * ((2025 - 2023) / (2030 - 2023))
+```
+
+`APS 2030` is not hand-picked. It is calculated from the same GEVO-2024 public page:
+
+```text
+APS_share_2030
+= 47.0 / (43.0 / 0.40)
+= 43.72093023255814%
+```
+
+GCAM does not accept market shares directly, so the direct IEA shares are translated into GCAM share-weights with an explicit relative-odds rule:
+
+```text
+target_plugin_share(tech, t) = target_total_ev_share(t) * plugin_mix(tech, t)
+share_weight_plugin(tech, t) =
+  N_ref * target_plugin_share(tech, t) /
+  max(1 - clipped_total_ev_share(t), residual_floor)
+```
+
+where:
+
+- `N_ref = 3` for `Hybrid Liquids`, `Liquids`, and `NG`
+- each non-plugin technology keeps unit `share-weight = 1`
+- `clipped_total_ev_share = min(target_total_ev_share, 0.99)`
+- `residual_floor = 0.01`
 
 Current interpretation:
 
-- `SSP1`: fastest EV transition; calibrated as an `IEA NZE`-like upper bound
-- `SSP2`: central case; calibrated as an `IEA STEPS`-like pathway
-- `SSP3`: delayed electrification below `STEPS`, informed by the weak-policy direction of `Current Policies`
-- `SSP4`: currently uses the same transport overlay as `SSP3` because this repository does not yet distinguish within-region inequality effects in LDV adoption
-- `SSP5`: high-income, high-mobility, high-innovation case with faster EV progress than `SSP2`, but not treated as a climate-constrained `NZE` path
+- `SSP1`: `NZE`
+- `SSP2`: `STEPS`
+- `SSP3`: `STEPS`
+- `SSP4`: `STEPS`
+- `SSP5`: `APS`
 
-This means the scenarios should be read as SSP-consistent EV overlays informed by IEA pathways, not as literal reproductions of IEA scenario outputs.
+This means the top-level EV adoption path is now fully anchored to one archived IEA edition. `SSP3` and `SSP4` do not currently have separate EV anchor paths because the chosen single edition does not provide a distinct public global weak-policy EV pathway that can be archived alongside `STEPS / APS / NZE`.
 
 The rest of the SSP structure is intentionally left on the official GCAM pathway. `batch_SSP_EV.xml` is generated from the stock `batch_SSP_REF.xml`, and the only added SSP-specific input is the EV transport overlay:
 
@@ -101,13 +156,30 @@ All other scenario-specific inputs continue to come from GCAM's official SSP bat
 
 For data centers, the mapping logic is different because the evidence is electricity demand rather than technology shares:
 
-- `SSP1`: `IEA High Efficiency`-like path
-- `SSP2`: `IEA Base Case`-like path
-- `SSP3`: `IEA Headwinds`-like path
-- `SSP4`: between `Base Case` and `Headwinds`, with stronger concentration in advanced regions
-- `SSP5`: `IEA Lift-Off`-like path
+- `SSP1`: `Energy and AI High Efficiency`
+- `SSP2`: `Energy and AI Base Case`
+- `SSP3`: `Energy and AI Headwinds`
+- `SSP4`: `Energy and AI Headwinds`
+- `SSP5`: `Energy and AI Lift-Off`
 
-Beyond `2035`, where IEA's scenario detail becomes thinner, the trajectories are explicit model extensions using damped annual growth rates that preserve SSP ordering. Those extensions are documented in [data/datacenter_ssp_assumptions.json](data/datacenter_ssp_assumptions.json).
+The archived public source package is:
+
+- [iea_energy_and_ai_2025_public_extract.json](/Users/sekiyamitsuna/CodexCLI/GCAM/gcam-ev-datacenter-overlays/data/source_exports/iea_energy_and_ai_2025_public_extract.json)
+
+The global datacenter anchors are now:
+
+- direct public values:
+  - `2024 = 415 TWh`
+  - `2030 = 945 TWh`
+  - `2035 = 970 / 1200 / 700 / 1700 TWh` depending on the mapped case
+- calculated bridge values:
+
+```text
+2020 = 415 / (1.12^4) = 263.7400025380049 TWh
+2025 = 415 + (945 - 415) * (1 / 6) = 503.3333333333333 TWh
+```
+
+Regionalization starts from the public 2024 shares `USA 45%`, `China 25%`, `Europe 15%`, `Rest 15%`. The public `USA +240 TWh by 2030` statement is applied directly, and the remaining 2030 total is split across non-USA groups in proportion to the 2024 public shares. After 2035, the case level is held constant through 2100.
 
 ### 4. PHEV logic
 
@@ -117,7 +189,19 @@ Beyond `2035`, where IEA's scenario detail becomes thinner, the trajectories are
 - electric energy use from `BEV`
 - liquid fuel use from `Hybrid Liquids`
 
-The `utility_factor` controls how much of the `PHEV` service demand is served by electricity versus liquids. Faster-electrifying SSPs use higher utility factors.
+The `utility_factor` controls how much of the `PHEV` service demand is served by electricity versus liquids. To avoid inventing separate SSP-specific `PHEV` behaviour, the current implementation holds:
+
+- `utility_factor = 0.55` for all SSPs
+- `cost blend = 40% BEV + 60% Hybrid Liquids`
+- `capital blend = 40% BEV + 60% Hybrid Liquids`
+
+The EV powertrain split itself is driven by direct IEA sales data where available:
+
+- `BEV = 70%`
+- `PHEV = 30%`
+- `FCEV = 0%`
+
+This is not a direct IEA sales table. It is a documented proxy built from the public GEVO-2024 statement that battery electric cars accounted for `70%` of the electric-car stock in `2023`. For `NZE`, `PHEV` goes to zero by `2035` because the same IEA edition states that light-vehicle sales are zero-emission by then.
 
 ### 5. Final and primary energy accounting
 
@@ -139,180 +223,115 @@ This combination is intentional:
 
 ## Parameter Provenance
 
-The two modules do not have the same provenance status.
+This repository now archives two machine-readable IEA public extract files and derives all additional anchor points from those files with explicit formulas:
 
-- `Datacenter`
-  - `2030` and `2035` global electricity-demand anchors are treated as direct IEA-style case anchors in `TWh`
-  - `2020` and `2025` are bridge values introduced by this add-on
-  - `2050+` values are explicit extrapolations introduced by this add-on
-  - regional allocation and GCAM income elasticities are add-on transformations, but they are formula-based and reproducible
-- `EV`
-  - the current `share-weight`, `cost multiplier`, `coefficient multiplier`, and `PHEV utility factor` schedules are not direct IEA numeric imports
-  - they are add-on translation parameters that map IEA scenario direction into GCAM control variables
-  - therefore they should be cited as `add-on assumptions informed by IEA`, not as `IEA values`
+- EV source package:
+  - [iea_global_ev_outlook_2024_public_extract.json](/Users/sekiyamitsuna/CodexCLI/GCAM/gcam-ev-datacenter-overlays/data/source_exports/iea_global_ev_outlook_2024_public_extract.json)
+- Datacenter source package:
+  - [iea_energy_and_ai_2025_public_extract.json](/Users/sekiyamitsuna/CodexCLI/GCAM/gcam-ev-datacenter-overlays/data/source_exports/iea_energy_and_ai_2025_public_extract.json)
 
-The detailed derivation note is in [parameter_provenance.md](docs/parameter_provenance.md).
+The academically accurate wording is:
 
-### Datacenter formulas used in the code
+- `EV`: `IEA-anchored with explicit GCAM translation`
+- `Datacenter`: `IEA-anchored with explicit bridge, regionalization, and flat post-2035 extension formulas`
 
-The script starts from the scenario anchors in [datacenter_ssp_assumptions.json](data/datacenter_ssp_assumptions.json):
-
-- common bridge values:
-  - `2020 = 300 TWh`
-  - `2025 = 430 TWh`
-- scenario anchors:
-  - `SSP1: 2030 = 800 TWh, 2035 = 960 TWh`
-  - `SSP2: 2030 = 945 TWh, 2035 = 1200 TWh`
-  - `SSP3: 2030 = 620 TWh, 2035 = 700 TWh`
-  - `SSP4: 2030 = 760 TWh, 2035 = 900 TWh`
-  - `SSP5: 2030 = 1150 TWh, 2035 = 1700 TWh`
-
-Those values are transformed as follows:
+The stronger claim
 
 ```text
-1 TWh = 0.0036 EJ
-D_global_EJ(s, t) = D_global_TWh(s, t) * 0.0036
+all EV and datacenter numbers are direct IEA values
 ```
+
+would still be false. The correct claim is:
 
 ```text
-D(t) = D(t_left) + (D(t_right) - D(t_left)) * (t - t_left) / (t_right - t_left)
+the repository archives public IEA source extracts and derives all additional anchor points with explicit formulas that are documented in-repo
 ```
 
-for the `2020 -> 2025 -> 2030 -> 2035` interpolation, and:
+### Public direct anchors now archived in-repo
+
+`EV`
+
+- `2018 = 2%`
+- `2023 = 18%`
+- `2023 BEV share of electric-car stock = 70%`
+- `STEPS 2030 = 40%`
+- `STEPS 2035 = 55%`
+- `APS 2035 = 66.66666666666667%`
+- `NZE 2030 = 65%`
+- `NZE 2035 = 100%`
+
+`Datacenter`
+
+- `2024 = 415 TWh`
+- `2024 regional shares = 45 / 25 / 15`
+- `historical growth note = 12% per year`
+- `2030 = 945 TWh`
+- `2035 = 970 / 1200 / 700 / 1700 TWh`
+- `USA increment to 2030 = 240 TWh`
+
+### Explicit calculations now used in the code
+
+`EV`
 
 ```text
-D(t) = D(t_prev) * (1 + g_phase)^(t - t_prev)
+share_2020
+= 2.0 * (18.0 / 2.0)^((2020 - 2018) / (2023 - 2018))
+= 4.816449370561385%
+
+share_2025(s)
+= 18.0 + (share_2030(s) - 18.0) * ((2025 - 2023) / (2030 - 2023))
+
+APS_share_2030
+= 47.0 / (43.0 / 0.40)
+= 43.72093023255814%
 ```
 
-for `2035+`, where `g_phase` comes from `post_2035_growth_rates`.
-
-The regional split is:
+`Datacenter`
 
 ```text
-w_group_raw(g, s) = base_share(g) * multiplier(g, s)
-w_group(g, s) = w_group_raw(g, s) / sum_g w_group_raw(g, s)
-split_region(r | g) = E_comm_2015(r) / sum_{r in g} E_comm_2015(r)
-D_region(r, s, t) = D_global(s, t) * w_group(g(r), s) * split_region(r | g(r))
+global_2020
+= 415 / (1.12^4)
+= 263.7400025380049 TWh
+
+global_2025
+= 415 + (945 - 415) * (1 / 6)
+= 503.3333333333333 TWh
 ```
 
-The historical seed and elasticity inversion are:
+For datacenter regionalization:
 
 ```text
-D_region(r, s, 2015) = 0.01 * D_region(r, s, 2020)
-
-epsilon(r, s, t) =
-  ln(D_region(r, s, t) / D_region(r, s, t_prev)) /
-  ln(GDP(r, s, t) / GDP(r, s, t_prev))
+USA_2030 = 415 * 0.45 + 240 = 426.75 TWh
+remaining_2030 = 945 - 426.75 = 518.25 TWh
 ```
 
-Worked example, `USA`, `SSP2`:
+and the non-USA `2030` total is split across `China / Europe / Rest of world` in proportion to their archived `2024` public shares. `2035` then scales the `2030` regional composition to the mapped public `2035` case endpoint, and `2040-2100` is held flat.
 
-```text
-2030 global = 945 TWh * 0.0036 = 3.402 EJ
-2030 USA    = 3.402 * 0.45 = 1.5309 EJ
-2015 seed   = 0.01 * 0.4860 = 0.00486 EJ
-```
+### Remaining modeling choices
 
-Using GDP from `socioeconomics_SSP2.xml`, the generated elasticities are:
+`EV`
 
-```text
-epsilon_2020 = 32.1345
-epsilon_2025 = 3.1652
-epsilon_2030 = 8.3939
-```
+- using the archived public `2023 BEV stock share = 70%` as a proxy for the within-EV `BEV/PHEV/FCEV` mix
+- `PHEV utility_factor = 0.55`
+- `PHEV` `40/60` blending weights
+- the GCAM `share-weight` conversion
 
-These are the exact values written into the generated datacenter XML.
+`Datacenter`
 
-### EV formulas used in the code
+- the tiny `2015` seed used to preserve GCAM calibration stability
+- the within-group split using GCAM `2015` commercial electricity
+- the income-elasticity inversion
 
-For EV, the important distinction is that the schedules in [ev_ssp_assumptions.json](data/ev_ssp_assumptions.json) are not direct IEA tables. They are the current translation layer:
-
-- `SSP1 -> NZE-like upper bound`
-- `SSP2 -> STEPS-like central case`
-- `SSP3 -> below-STEPS delayed case`
-- `SSP4 -> same transport path as SSP3 in the current version`
-- `SSP5 -> faster-than-STEPS technology-led case`
-
-The generator applies the schedule values directly at the anchor years:
-
-- `2020, 2025, 2030, 2035, 2040, 2045, 2050`
-
-and then holds the `2050` value constant through `2100`.
-
-For existing EV technologies, the script uses:
-
-```text
-capital_coef_new(t) = capital_coef_base(t) * cost_multiplier(t)
-input_cost_new(t)   = input_cost_base(t)   * cost_multiplier(t)
-energy_coef_new(t)  = energy_coef_base(t)  * coefficient_multiplier(t)
-```
-
-For `PHEV`, the script uses explicit blend formulas:
-
-```text
-capital_coef_PHEV(t) =
-  cost_multiplier_PHEV(t) *
-  [0.4 * capital_coef_BEV(t) + 0.6 * capital_coef_Hybrid(t)]
-
-input_cost_PHEV(t) =
-  cost_multiplier_PHEV(t) *
-  [0.4 * input_cost_BEV(t) + 0.6 * input_cost_Hybrid(t)]
-
-elec_coef_PHEV(t) =
-  coefficient_multiplier_PHEV(t) *
-  utility_factor(t) *
-  coef_BEV(t)
-
-liquids_coef_PHEV(t) =
-  coefficient_multiplier_PHEV(t) *
-  [1 - utility_factor(t)] *
-  coef_Hybrid(t)
-```
-
-Worked example, `USA`, `Car`, `SSP2`, `2030`:
-
-```text
-share_weight_BEV     = 0.30
-share_weight_PHEV    = 0.18
-share_weight_FCEV    = 0.06
-share_weight_Hybrid  = 1.00
-share_weight_Liquids = 0.90
-share_weight_NG      = 0.65
-
-cost_multiplier_PHEV = 0.95
-coef_multiplier_PHEV = 0.99
-utility_factor_PHEV  = 0.56
-```
-
-From the base GCAM transport file, the resulting `PHEV` values are:
-
-```text
-capital_coef_PHEV = 0.0017626561135193866
-input_cost_PHEV   = 0.21223
-elec_coef_PHEV    = 453.01595358096
-liquids_coef_PHEV = 613.5024582838798
-```
-
-This is why the honest provenance statement is:
-
-```text
-Datacenter 2030/2035 anchors: direct source anchors
-Datacenter bridge, extrapolation, and regionalization: add-on transformations
-EV schedules: add-on translation parameters informed by IEA scenario direction
-```
+The full derivation note is in [parameter_provenance.md](/Users/sekiyamitsuna/CodexCLI/GCAM/gcam-ev-datacenter-overlays/docs/parameter_provenance.md).
 
 ## Source Basis
 
 ### Primary institutional sources
 
-- `IEA (2025), Global EV Outlook 2025`
-  - used for the direction of global EV adoption, the continued dominance of BEVs over PHEVs, and the role of policy support and model availability
-- `IEA (2025), World Energy Outlook 2025`
-  - used for the policy interpretation of `STEPS` and `NZE`
+- `IEA (2024), Global EV Outlook 2024`
+  - used as the single archived EV source edition for public historical and scenario anchors
 - `IEA (2025), Energy and AI`
-  - used for global data center electricity demand in `2024`, the `2030` Base Case anchor, the `2035` Base Case anchor, and the `Headwinds`, `High Efficiency`, and `Lift-Off` case ordering
-- `IEA (2025), Electricity 2025`
-  - used for near-term electricity-system context around large-load growth and supply response
+  - used as the single archived datacenter source edition for public historical and scenario anchors
 - `GCAM v7.0 documentation`
   - used for model execution, query structure, XML overlay behavior, transport accounting, and building-service accounting
 
@@ -500,51 +519,40 @@ python3 scripts/plot_three_way_validation_results.py \
 
 ## Validation Status
 
-- XML generation completed for `SSP1` to `SSP5`
-- installation into a local `GCAM v7.0` package completed
-- stock `SSP1` to `SSP5`, `EV`, and `EV + datacenter sector` batches all completed successfully through database output
-- the three-way comparison was completed for `SSP1` to `SSP5` across every available model year from `1990` to `2100`
-- `check_batch_alignment.py` confirmed that the only SSP-specific additions relative to the stock GCAM batch are the EV transport overlay and the datacenter-sector overlay
-- `validation_report.json` confirmed full coverage for all requested scenarios, years, sectors, and primary fuels with no missing rows
-
-The completed validation shows that:
-
-- `PHEV` dual-fuel XML is accepted by `GCAM v7.0`
-- the EV overlay produces visible and traceable changes in both final and primary energy accounting under the same SSP background assumptions
-- the data center overlay appears as an explicit `comm datacenter sector` in final-energy results while propagating through to global primary energy totals
-- the requested `ahe_generator_gcam` query pair is available for every `SSP` and model year in the comparison outputs
-
-Representative results from the completed three-way comparison:
-
-- `SSP1 2050`: transport final energy changes from `155.09 EJ` in baseline to `146.63 EJ` with `EV`, while `EV+DC` stays at `146.62 EJ`; the added data center load appears separately as `4.65 EJ`
-- `SSP2 2050`: total final energy changes from `713.38 EJ` in baseline to `706.94 EJ` with `EV`, then rebounds to `712.54 EJ` with `EV+DC`; total primary energy changes from `670.85 EJ` to `669.87 EJ` to `678.09 EJ`
-- `SSP5 2100`: the explicit data center sector reaches `12.63 EJ`, and total primary energy rises from `918.99 EJ` in the `EV` case to `934.78 EJ` in the `EV+DC` case
+- the EV overlay was rerun after the direct-IEA translation refactor and the refreshed validation outputs now exist under `output/ev_validation/`
+- the refreshed EV validation passed all structural checks in `output/ev_validation/plots/validation_report.json`
+- the refreshed EV validation covers `SSP1` to `SSP5`, all model years from `1990` to `2100`, and all expected GCAM primary-energy regions
+- the `EV + datacenter` three-way validation has not yet been refreshed after the current EV refactor and should still be treated as pending
 
 ## Validation Figures
 
-### Baseline, EV, and EV+datacenter total energy across all SSPs and years
+The three figures below are the refreshed `baseline vs EV` validation figures for the current direct-IEA EV translation.
 
-![Baseline, EV, and EV+datacenter total energy across all SSPs and years](docs/figures/overview_total_final_primary.png)
+At `2050`, the headline `EV - baseline` differences are:
 
-### Total energy deltas relative to stock SSP runs
+- `SSP1`: total final energy `-18.77 EJ`, primary energy `-11.57 EJ`
+- `SSP2`: total final energy `-5.74 EJ`, primary energy `-1.57 EJ`
+- `SSP3`: total final energy `+0.055 EJ`, primary energy `+0.676 EJ`
+- `SSP4`: total final energy `-0.074 EJ`, primary energy `+0.280 EJ`
+- `SSP5`: total final energy `-8.46 EJ`, primary energy `-2.07 EJ`
 
-![Total energy deltas relative to stock SSP runs](docs/figures/delta_total_final_primary.png)
+These refreshed figures are stored in `docs/figures/ev_validation/`:
 
-### Transport and datacenter final energy
+![Baseline vs EV overview](docs/figures/ev_validation/overview_before_after.png)
 
-![Transport and datacenter final energy](docs/figures/transport_and_datacenter_final_energy.png)
+![Final energy sector delta](docs/figures/ev_validation/final_energy_sector_delta.png)
 
-### Primary fuel shifts from adding datacenter load on top of EV
-
-![Primary fuel shifts from adding datacenter load on top of EV](docs/figures/primary_fuel_shift_evdc_minus_ev.png)
+![Primary energy fuel delta](docs/figures/ev_validation/primary_energy_fuel_delta.png)
 
 ## Future Extension
 
-The next planned step is not to invent another demand module immediately, but to deepen the evidence base and validation around the implemented `data center sector`, including:
+The next required step is to rerun the full three-way workflow with the refactored inputs and regenerate:
 
-- stronger regional calibration beyond the current group-based allocation
-- additional validation figures for `building final energy by service and fuel`
-- full combined `EV + data center` comparison outputs for every `SSP`
+- `baseline`
+- `SSP + EV`
+- `SSP + EV + datacenter`
+
+After that, the repository should replace the old three-way validation CSVs and figures with outputs generated from the archived single-edition source packages.
 
 The design and evidence note remains in [docs/datacenter_sector_plan.md](docs/datacenter_sector_plan.md).
 
@@ -556,22 +564,21 @@ python3 scripts/check_batch_alignment.py --gcam-root /path/to/gcam-v7.0-Mac_arm6
 
 ## Limitations
 
-- `SSP4` currently reuses the `SSP3` transport overlay; this is a pragmatic placeholder, not a claim that the two SSPs are identical.
-- The EV schedules are calibrated heuristically from institutional scenarios and SSP narratives. They are defensible, but they are not an econometric re-estimation of market shares.
+- `SSP3` and `SSP4` currently reuse the same `STEPS` EV anchor path because the chosen single EV edition does not expose a distinct public global weak-policy EV pathway that can be archived alongside `STEPS / APS / NZE`.
+- The EV overlay still uses the public `2023 BEV stock share = 70%` as a proxy for the within-EV `BEV/PHEV/FCEV` mix; this is transparent and source-based, but it is not a direct IEA sales table.
+- The datacenter overlay still requires a tiny `2015` seed and an income-elasticity inversion to fit GCAM's `energy-final-demand` structure.
+- The refreshed validation figures currently cover `baseline vs EV`; the `baseline vs EV vs EV+datacenter` three-way figures still need to be regenerated after the current EV refactor.
 - The repository currently targets passenger light-duty road transport. It does not yet add separate EV detail for buses, trucks, two-wheelers, or non-road transport.
 
 ## References
 
-- IEA. 2025. *Global EV Outlook 2025*. [https://www.iea.org/reports/global-ev-outlook-2025](https://www.iea.org/reports/global-ev-outlook-2025)
-- IEA. 2025. *Executive summary*. [https://www.iea.org/reports/global-ev-outlook-2025/executive-summary](https://www.iea.org/reports/global-ev-outlook-2025/executive-summary)
-- IEA. 2025. *Trends in the electric car industry*. [https://www.iea.org/reports/global-ev-outlook-2025/trends-in-the-electric-car-industry-3](https://www.iea.org/reports/global-ev-outlook-2025/trends-in-the-electric-car-industry-3)
-- IEA. 2025. *Outlook for electric mobility*. [https://www.iea.org/reports/global-ev-outlook-2025/outlook-for-electric-mobility](https://www.iea.org/reports/global-ev-outlook-2025/outlook-for-electric-mobility)
-- IEA. 2025. *Outlook for energy demand*. [https://www.iea.org/reports/global-ev-outlook-2025/outlook-for-energy-demand](https://www.iea.org/reports/global-ev-outlook-2025/outlook-for-energy-demand)
-- IEA. 2025. *World Energy Outlook 2025*. [https://www.iea.org/reports/world-energy-outlook-2025](https://www.iea.org/reports/world-energy-outlook-2025)
-- IEA. 2025. *Scenarios in the World Energy Outlook 2025*. [https://www.iea.org/commentaries/scenarios-in-the-world-energy-outlook-2025](https://www.iea.org/commentaries/scenarios-in-the-world-energy-outlook-2025)
-- IEA. 2025. *Stated Policies Scenario*. [https://www.iea.org/reports/world-energy-outlook-2025/stated-policies-scenario](https://www.iea.org/reports/world-energy-outlook-2025/stated-policies-scenario)
-- IEA. 2025. *Net Zero Emissions by 2050*. [https://www.iea.org/reports/world-energy-outlook-2025/net-zero-emissions-by-2050](https://www.iea.org/reports/world-energy-outlook-2025/net-zero-emissions-by-2050)
-- IEA. 2025. *Current Policies Scenario*. [https://www.iea.org/reports/world-energy-outlook-2025/current-policies-scenario](https://www.iea.org/reports/world-energy-outlook-2025/current-policies-scenario)
+- IEA. 2024. *Global EV Outlook 2024*. [https://www.iea.org/reports/global-ev-outlook-2024](https://www.iea.org/reports/global-ev-outlook-2024)
+- IEA. 2024. *Trends in electric cars*. [https://www.iea.org/reports/global-ev-outlook-2024/trends-in-electric-cars](https://www.iea.org/reports/global-ev-outlook-2024/trends-in-electric-cars)
+- IEA. 2024. *Outlook for electric mobility*. [https://www.iea.org/reports/global-ev-outlook-2024/outlook-for-electric-mobility](https://www.iea.org/reports/global-ev-outlook-2024/outlook-for-electric-mobility)
+- IEA. 2024. *The world’s electric car fleet continues to grow strongly, with 2024 sales set to reach 17 million*. [https://www.iea.org/news/the-worlds-electric-car-fleet-continues-to-grow-strongly-with-2024-sales-set-to-reach-17-million](https://www.iea.org/news/the-worlds-electric-car-fleet-continues-to-grow-strongly-with-2024-sales-set-to-reach-17-million)
+- IEA. 2025. *Energy and AI*. [https://www.iea.org/reports/energy-and-ai](https://www.iea.org/reports/energy-and-ai)
+- IEA. 2025. *Executive summary*. [https://www.iea.org/reports/energy-and-ai/executive-summary%C2%A0](https://www.iea.org/reports/energy-and-ai/executive-summary%C2%A0)
+- IEA. 2025. *Energy supply for AI*. [https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai](https://www.iea.org/reports/energy-and-ai/energy-supply-for-ai)
 - GCAM documentation v7.0. *How to Get Started Running GCAM*. [https://jgcri.github.io/gcam-doc/v7.0/how-to-run-gcam.html](https://jgcri.github.io/gcam-doc/v7.0/how-to-run-gcam.html)
 - GCAM documentation v7.0. *Model Interface*. [https://jgcri.github.io/gcam-doc/v7.0/model-interface.html](https://jgcri.github.io/gcam-doc/v7.0/model-interface.html)
 - GCAM documentation v7.0. *GCAM User Guide*. [https://jgcri.github.io/gcam-doc/v7.0/user-guide.html](https://jgcri.github.io/gcam-doc/v7.0/user-guide.html)

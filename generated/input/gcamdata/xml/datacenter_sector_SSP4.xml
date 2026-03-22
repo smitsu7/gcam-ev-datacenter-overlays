@@ -66,7 +66,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>1.26140329416836e-06</calOutputValue>
+                <calOutputValue>4.40731468974942e-06</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -203,40 +203,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">1.26140329416836e-06</base-service>
+        <base-service year="2015">4.40731468974942e-06</base-service>
         <income-elasticity year="2020">14.1710805049107</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.39450796091478</income-elasticity>
+        <income-elasticity year="2025">2.49996727893775</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.56805692813604</income-elasticity>
+        <income-elasticity year="2030">2.83144152382485</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">0.944645428052723</income-elasticity>
+        <income-elasticity year="2035">-1.67671270793595</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.526010810549364</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.547976432251079</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.572774848537151</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.16699430014123</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.172465414326212</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.177205796074414</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.182007419906812</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.188465569748083</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.197654883481176</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.207338089973089</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.21636868794723</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.224147191295508</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.231256857075012</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -305,7 +305,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>1.32276766715123e-05</calOutputValue>
+                <calOutputValue>4.62172042638021e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -442,40 +442,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">1.32276766715123e-05</base-service>
+        <base-service year="2015">4.62172042638021e-05</base-service>
         <income-elasticity year="2020">18.3846025690965</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.53332943600497</income-elasticity>
+        <income-elasticity year="2025">2.74883580824445</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.64126184131844</income-elasticity>
+        <income-elasticity year="2030">2.91215446622956</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">0.897807002529156</income-elasticity>
+        <income-elasticity year="2035">-1.59357613524649</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.546524807930959</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.628083367786426</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.713330333818954</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.215588737199234</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.229654513237015</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.250882658299409</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.28879072093898</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.336858108738083</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.384618794757298</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.43302323950111</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.474024538353383</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.518745312988988</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.592611904564497</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -544,7 +544,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>2.17051967726614e-06</calOutputValue>
+                <calOutputValue>7.58374684942629e-06</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -681,40 +681,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">2.17051967726614e-06</base-service>
+        <base-service year="2015">7.58374684942629e-06</base-service>
         <income-elasticity year="2020">15.6876864835012</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.58946591363696</income-elasticity>
+        <income-elasticity year="2025">2.84947299438337</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.95288742617487</income-elasticity>
+        <income-elasticity year="2030">3.2557409386249</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.09623538777588</income-elasticity>
+        <income-elasticity year="2035">-1.94577960257733</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.599141202554982</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.578076601988852</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.550968880035016</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.15020634493855</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.149302088591218</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.150243081142207</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.152492238771206</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.157239767554143</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.163638045023737</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.171286563898544</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.180040154201784</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.188103860012928</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.19654431645745</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -783,7 +783,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>2.39439080015523e-06</calOutputValue>
+                <calOutputValue>8.36594750886748e-06</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -920,40 +920,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">2.39439080015523e-06</base-service>
+        <base-service year="2015">8.36594750886748e-06</base-service>
         <income-elasticity year="2020">14.7759358076729</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.28164610193396</income-elasticity>
+        <income-elasticity year="2025">2.29763716509095</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.31603417828537</income-elasticity>
+        <income-elasticity year="2030">2.55357086174663</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">0.838446878082315</income-elasticity>
+        <income-elasticity year="2035">-1.48821398342848</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.486648033923029</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.523136192333803</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.550213232340768</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.158654743193729</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.163628677566327</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.169334039286042</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.175389421451268</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.181090456298314</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.189730691177312</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.199219031800937</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.210612096542699</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.222157259683352</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.232766611300849</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -1022,7 +1022,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>1.05597515804262e-05</calOutputValue>
+                <calOutputValue>1.95140870557818e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -1159,40 +1159,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">1.05597515804262e-05</base-service>
+        <base-service year="2015">1.95140870557818e-05</base-service>
         <income-elasticity year="2020">25.3336488754416</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.29719066611196</income-elasticity>
+        <income-elasticity year="2025">4.11822783356061</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">4.05586085427669</income-elasticity>
+        <income-elasticity year="2030">4.47183733033134</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.37744591068532</income-elasticity>
+        <income-elasticity year="2035">-2.44491847877931</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.874896051475407</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.07258711419502</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.1961373024805</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.367952219837538</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.409342442319622</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.471657696817821</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.565181461470475</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.701983903296796</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.808407268549117</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.91160166583974</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.989344824121469</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">1.06872152242753</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.2318472224956</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -1261,7 +1261,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.000114809131349474</calOutputValue>
+                <calOutputValue>6.34451023016608e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -1398,40 +1398,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.000114809131349474</base-service>
+        <base-service year="2015">6.34451023016608e-05</base-service>
         <income-elasticity year="2020">29.4355578011079</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.54712975188538</income-elasticity>
+        <income-elasticity year="2025">4.56629952169302</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">4.2202814844249</income-elasticity>
+        <income-elasticity year="2030">4.65312123976282</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.27885415517876</income-elasticity>
+        <income-elasticity year="2035">-2.26992154930035</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.71624836622144</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.760549018137487</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.854342159536405</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.262761468145202</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.269330202328219</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.284422463784404</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.310603144899534</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.355714096027749</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.399929092241625</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.460457065463323</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.523063467904733</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.588334884526317</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.690372199382137</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -1500,7 +1500,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>4.2053855309567e-05</calOutputValue>
+                <calOutputValue>7.77141950065663e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -1637,40 +1637,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">4.2053855309567e-05</base-service>
+        <base-service year="2015">7.77141950065663e-05</base-service>
         <income-elasticity year="2020">24.1973825150222</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.36101354260544</income-elasticity>
+        <income-elasticity year="2025">4.23264460804552</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">4.45467320833062</income-elasticity>
+        <income-elasticity year="2030">4.91155260576421</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.55347245103047</income-elasticity>
+        <income-elasticity year="2035">-2.75735945225559</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.909240955439694</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.03755138744517</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.20159140772396</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.363313819419924</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.392712258329483</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.462426138011416</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.542649186487555</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.597012563727902</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.691897232194242</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.817112625725192</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.924922838353259</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.993211227817645</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.09821324537746</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -1739,7 +1739,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.000176520891079084</calOutputValue>
+                <calOutputValue>9.75478680245598e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -1876,40 +1876,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.000176520891079084</base-service>
+        <base-service year="2015">9.75478680245598e-05</base-service>
         <income-elasticity year="2020">38.5450901472127</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">3.7413637595551</income-elasticity>
+        <income-elasticity year="2025">6.70723096579214</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">5.88404762777485</income-elasticity>
+        <income-elasticity year="2030">6.48752626895126</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.6187827666034</income-elasticity>
+        <income-elasticity year="2035">-2.87328298592067</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.896579265265932</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.999145574634933</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.14512877002707</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.354086577753472</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.35427689793685</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.350341863126584</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.364804190521349</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.406060483203468</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.444717255794854</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.506177191062723</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.569131658805164</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.636879378759816</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.747923002368577</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -1978,7 +1978,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>7.39419264115241e-06</calOutputValue>
+                <calOutputValue>1.36642342206354e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -2115,40 +2115,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">7.39419264115241e-06</base-service>
+        <base-service year="2015">1.36642342206354e-05</base-service>
         <income-elasticity year="2020">25.8304768538521</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.24036021979729</income-elasticity>
+        <income-elasticity year="2025">4.01634655341297</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.89753380104813</income-elasticity>
+        <income-elasticity year="2030">4.29727196616647</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.33755300284255</income-elasticity>
+        <income-elasticity year="2035">-2.3741099578781</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.769643477134442</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.842368827886359</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.935709717390592</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.288053943708355</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.313861136819454</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.341742494761914</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.372705338191188</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.403029002752791</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.430850589113249</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.465601738793364</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.491884621592551</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.511370555277652</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.530615029123255</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -2217,7 +2217,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>5.26127628011175e-06</calOutputValue>
+                <calOutputValue>1.83827807834089e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -2354,40 +2354,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">5.26127628011175e-06</base-service>
+        <base-service year="2015">1.83827807834089e-05</base-service>
         <income-elasticity year="2020">17.0248487465965</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.38859539086793</income-elasticity>
+        <income-elasticity year="2025">2.48936767530275</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.59461629248334</income-elasticity>
+        <income-elasticity year="2030">2.86072486495153</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">0.893496321987207</income-elasticity>
+        <income-elasticity year="2035">-1.58592482753896</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.576202670184349</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.758702326869311</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.11374272892866</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.412989555631187</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.43888929949497</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.439044187176304</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.504356072141536</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.665985436689627</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.794184528919643</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.928562320106919</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.986545336606717</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">1.05537865452628</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.31412199647748</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -2456,7 +2456,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.00253013812289521</calOutputValue>
+                <calOutputValue>0.00237366002284204</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -2593,40 +2593,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.00253013812289521</base-service>
+        <base-service year="2015">0.00237366002284204</base-service>
         <income-elasticity year="2020">12.2608875906446</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.25567789914004</income-elasticity>
+        <income-elasticity year="2025">2.25108335607933</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.67205164106348</income-elasticity>
+        <income-elasticity year="2030">2.94610212391316</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.11647474359</income-elasticity>
+        <income-elasticity year="2035">-1.98170375367805</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.781807057976442</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.04077357963698</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.58761688648835</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.797211470655843</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">1.26336353694833</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">3.16307707840911</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">-8.95295172965033</income-elasticity>
+        <income-elasticity year="2070">-0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">-1.75872022225199</income-elasticity>
+        <income-elasticity year="2075">-0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">-1.32230495846766</income-elasticity>
+        <income-elasticity year="2080">-0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">-0.984172497507837</income-elasticity>
+        <income-elasticity year="2085">-0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">-0.874974617833797</income-elasticity>
+        <income-elasticity year="2090">-0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">-0.827103746793473</income-elasticity>
+        <income-elasticity year="2095">-0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">-0.779193939225893</income-elasticity>
+        <income-elasticity year="2100">-0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -2695,7 +2695,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>6.41003271387267e-06</calOutputValue>
+                <calOutputValue>1.18455377909441e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -2832,40 +2832,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">6.41003271387267e-06</base-service>
+        <base-service year="2015">1.18455377909441e-05</base-service>
         <income-elasticity year="2020">23.1828944768659</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.47309714451113</income-elasticity>
+        <income-elasticity year="2025">4.43357952209642</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.79262235928116</income-elasticity>
+        <income-elasticity year="2030">4.18160061585924</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.18635552274045</income-elasticity>
+        <income-elasticity year="2035">-2.10573970088372</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.659598256349156</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.71898670890865</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.778071036944463</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.232541641393364</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.249335779010188</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.271744561092467</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.30165180562176</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.340516359808935</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.378142024314693</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.427603784914495</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.481669838770188</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.541220820781192</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.625915440129789</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -2934,7 +2934,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.000226911466694438</calOutputValue>
+                <calOutputValue>0.000185784413560605</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -3071,40 +3071,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.000226911466694438</base-service>
+        <base-service year="2015">0.000185784413560605</base-service>
         <income-elasticity year="2020">30.4697213025353</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.61159822078072</income-elasticity>
+        <income-elasticity year="2025">4.68187366488819</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">4.46829263996172</income-elasticity>
+        <income-elasticity year="2030">4.92656887110813</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.50838361518448</income-elasticity>
+        <income-elasticity year="2035">-2.67732834025957</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.979338160465299</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.26968948568055</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.55693546923929</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.507971956586126</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.516652310104826</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.536975607441609</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.633151968984005</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.859497813526297</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">1.10492232926339</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">1.36878896745318</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">1.50662770464668</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">1.50847950816513</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.63947161920867</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -3173,7 +3173,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.00123894991787862</calOutputValue>
+                <calOutputValue>0.00101439379541802</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -3310,40 +3310,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.00123894991787862</base-service>
+        <base-service year="2015">0.00101439379541802</base-service>
         <income-elasticity year="2020">57.0184192018441</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">4.52465581572296</income-elasticity>
+        <income-elasticity year="2025">8.11145709081689</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">6.80503131724791</income-elasticity>
+        <income-elasticity year="2030">7.50296772298171</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.9600816857507</income-elasticity>
+        <income-elasticity year="2035">-3.47907667098484</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">1.06486064798881</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.15773325205122</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.29209915146973</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.391128668760642</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.397522970210039</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.420506068384987</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.470247001060846</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.543415769845231</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.594782707322004</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.655666170322565</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.70466311821912</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.752580665989985</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.866299698985746</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -3412,7 +3412,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>6.91677293789529e-05</calOutputValue>
+                <calOutputValue>5.66312766260146e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -3549,40 +3549,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">6.91677293789529e-05</base-service>
+        <base-service year="2015">5.66312766260146e-05</base-service>
         <income-elasticity year="2020">26.2404726331723</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.13855795324359</income-elasticity>
+        <income-elasticity year="2025">3.83384323149645</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.57450930918982</income-elasticity>
+        <income-elasticity year="2030">3.94111749410658</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.1779975027787</income-elasticity>
+        <income-elasticity year="2035">-2.09090450678139</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.706781878649308</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.836857388327613</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.979897226756632</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.285906217514043</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.280295463983535</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.299382704906746</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.353257426456616</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.456123472922964</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.561799617931962</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.665494459002777</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.762139999654385</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.894981088688827</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.22796650362479</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -3651,7 +3651,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.000120775844371867</calOutputValue>
+                <calOutputValue>9.888556865718e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -3788,40 +3788,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.000120775844371867</base-service>
+        <base-service year="2015">9.888556865718e-05</base-service>
         <income-elasticity year="2020">23.6994462028315</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.25930408882025</income-elasticity>
+        <income-elasticity year="2025">4.05030767376597</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">4.1028292947442</income-elasticity>
+        <income-elasticity year="2030">4.52362293959567</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.41161169669971</income-elasticity>
+        <income-elasticity year="2035">-2.50556155806149</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.830692652367006</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.969531006168781</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.12449522082887</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.350236357351501</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.389406722214571</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.444299877270534</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.514874023086548</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.610731307840096</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.714984413923295</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.830432568029918</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.916429698217071</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.98288405977575</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.10428802705017</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -3890,7 +3890,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>8.36650011665808e-05</calOutputValue>
+                <calOutputValue>6.85009594434109e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -4027,40 +4027,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">8.36650011665808e-05</base-service>
+        <base-service year="2015">6.85009594434109e-05</base-service>
         <income-elasticity year="2020">43.5406530456165</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">3.783805967857</income-elasticity>
+        <income-elasticity year="2025">6.78331811263855</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">5.7595848160557</income-elasticity>
+        <income-elasticity year="2030">6.35029832458113</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.71969778609193</income-elasticity>
+        <income-elasticity year="2035">-3.05240362798722</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">1.00686751296181</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.13514611588047</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.21434697217465</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.353502958996736</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.366980389846404</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.382587214361156</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.411500077049055</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.464956574620053</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.509366726144365</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.57632758714279</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.652121731762819</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.73579398945546</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.874793497292412</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -4129,7 +4129,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.000130259329000668</calOutputValue>
+                <calOutputValue>0.000127575856661547</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -4266,40 +4266,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.000130259329000668</base-service>
+        <base-service year="2015">0.000127575856661547</base-service>
         <income-elasticity year="2020">14.2819550185513</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.27032159094701</income-elasticity>
+        <income-elasticity year="2025">2.27733544741645</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.32226915577732</income-elasticity>
+        <income-elasticity year="2030">2.56044530988577</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">0.792656273539311</income-elasticity>
+        <income-elasticity year="2035">-1.40693725645634</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.471756727825734</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.541174249699555</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.620667004156273</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.195473672129504</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.219556855025752</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.251590719760089</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.295519359189107</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.352156487351373</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.415556255407332</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.492248966792498</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.574891621060546</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.670599798871915</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.818894319307416</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -4368,7 +4368,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>2.31170208842327e-05</calOutputValue>
+                <calOutputValue>2.26407871543215e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -4505,40 +4505,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">2.31170208842327e-05</base-service>
+        <base-service year="2015">2.26407871543215e-05</base-service>
         <income-elasticity year="2020">14.5423968465426</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.23485642726138</income-elasticity>
+        <income-elasticity year="2025">2.2137562128468</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.26172816443077</income-elasticity>
+        <income-elasticity year="2030">2.4936951242049</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">0.780631440900323</income-elasticity>
+        <income-elasticity year="2035">-1.38559359766347</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.466139198230798</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.548732144194473</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.651965063111858</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.212039422657215</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.247024915921737</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.296195461468709</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.369734106841519</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.458343171449242</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.553173178204696</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.672999034199305</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.823032743720255</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">1.02135151209581</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.3577509441475</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -4607,7 +4607,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.000341568646590854</calOutputValue>
+                <calOutputValue>0.000265182759762798</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -4744,40 +4744,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.000341568646590854</base-service>
+        <base-service year="2015">0.000265182759762798</base-service>
         <income-elasticity year="2020">100.280738246446</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">5.74655965951916</income-elasticity>
+        <income-elasticity year="2025">10.3019929020968</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">7.90417467632241</income-elasticity>
+        <income-elasticity year="2030">8.71484122680577</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">2.50027584376479</income-elasticity>
+        <income-elasticity year="2035">-4.43790247228269</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">1.60511999846101</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.74347009359705</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">2.05224919770959</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.621782972777696</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.678318716822807</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.844093508134546</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">1.15076615214636</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">1.90495499789668</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">3.34380419851922</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">7.02908826572177</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">32.0382723475977</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">-12.877316185899</income-elasticity>
+        <income-elasticity year="2095">-0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">-3.86656844497187</income-elasticity>
+        <income-elasticity year="2100">-0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -4846,7 +4846,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>1.55413377883642e-05</calOutputValue>
+                <calOutputValue>2.87199008665702e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -4983,40 +4983,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">1.55413377883642e-05</base-service>
+        <base-service year="2015">2.87199008665702e-05</base-service>
         <income-elasticity year="2020">29.5969686584346</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.48610584339533</income-elasticity>
+        <income-elasticity year="2025">4.45690052309717</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.97529250597511</income-elasticity>
+        <income-elasticity year="2030">4.38300574549079</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.2602755060095</income-elasticity>
+        <income-elasticity year="2035">-2.23694509460814</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.745604534763096</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.822859515143521</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.872917271557385</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.258433306813922</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.278880089534287</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.297250769634157</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.329476676446989</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.361181296999337</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.390700312484596</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.426872215203436</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.463968403102922</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.503714709103632</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.557932275621097</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -5085,7 +5085,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>3.92491042003269e-05</calOutputValue>
+                <calOutputValue>0.000137135485773132</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -5222,40 +5222,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">3.92491042003269e-05</base-service>
+        <base-service year="2015">0.000137135485773132</base-service>
         <income-elasticity year="2020">21.6072480164979</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.78231640892739</income-elasticity>
+        <income-elasticity year="2025">3.19520062123517</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.80562866239798</income-elasticity>
+        <income-elasticity year="2030">3.09337904783627</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">0.887045058645683</income-elasticity>
+        <income-elasticity year="2035">-1.57447405997502</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.53456380374039</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.641120001022125</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.782940935759038</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.251257802656771</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.271556295129233</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.28345778134579</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.294195606409913</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.301682342131203</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.303049935348113</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.304845630503819</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.303443324596665</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.302830821882733</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.304985518874097</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -5324,7 +5324,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>5.13583405400195e-06</calOutputValue>
+                <calOutputValue>5.03003074050447e-06</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -5461,40 +5461,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">5.13583405400195e-06</base-service>
+        <base-service year="2015">5.03003074050447e-06</base-service>
         <income-elasticity year="2020">22.1427879328892</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.78824203979569</income-elasticity>
+        <income-elasticity year="2025">3.20582363931254</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.19037221502252</income-elasticity>
+        <income-elasticity year="2030">3.517582599942</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.10812871402951</income-elasticity>
+        <income-elasticity year="2035">-1.96688984212</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.61788274181118</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.662627369775502</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.71985945533978</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.214689496805126</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.223824942277056</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.228127167930081</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.229278870042146</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.23702955686403</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.249835804502474</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.262366163297405</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.270575542308182</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.27411131567682</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.275083231930308</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -5563,7 +5563,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>3.97705902454912e-05</calOutputValue>
+                <calOutputValue>0.000138957546265583</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -5700,40 +5700,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">3.97705902454912e-05</base-service>
+        <base-service year="2015">0.000138957546265583</base-service>
         <income-elasticity year="2020">26.2543051587068</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.22426955156651</income-elasticity>
+        <income-elasticity year="2025">3.9875004333472</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.68231360382683</income-elasticity>
+        <income-elasticity year="2030">4.05997839354289</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.21506861461608</income-elasticity>
+        <income-elasticity year="2035">-2.15670443813042</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.792494504026693</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.13478710158815</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.70575498345154</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.542241688382605</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.448377579922579</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.493878400239544</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.604737126516332</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.887373776286635</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">1.30080034463309</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">1.72920929341617</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">2.0893795512859</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">2.78304240254179</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">10.3344975706937</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -5802,7 +5802,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>7.35858170763368e-06</calOutputValue>
+                <calOutputValue>2.57107186937841e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -5939,40 +5939,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">7.35858170763368e-06</base-service>
+        <base-service year="2015">2.57107186937841e-05</base-service>
         <income-elasticity year="2020">22.1579404188033</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.98279440480154</income-elasticity>
+        <income-elasticity year="2025">3.55460224810264</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.56230679178422</income-elasticity>
+        <income-elasticity year="2030">3.92766346429172</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.22190422214734</income-elasticity>
+        <income-elasticity year="2035">-2.16883740323433</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.736395980898189</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.855717638311042</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.00031004366299</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.310369724154733</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.334220476989392</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.382370145618287</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.453576332134309</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.528177069765366</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.620752562876051</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.753686334017412</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.921558779837658</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">1.16945722477904</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">1.6153926766411</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -6041,7 +6041,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>6.55469474187328e-06</calOutputValue>
+                <calOutputValue>1.21128686449485e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -6178,40 +6178,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">6.55469474187328e-06</base-service>
+        <base-service year="2015">1.21128686449485e-05</base-service>
         <income-elasticity year="2020">31.8075990744234</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.27039468180456</income-elasticity>
+        <income-elasticity year="2025">4.07019004112558</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.9279437823071</income-elasticity>
+        <income-elasticity year="2030">4.33080085048832</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.18874500307021</income-elasticity>
+        <income-elasticity year="2035">-2.10998094518058</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.734365545468698</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.849245052434405</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.962489491591963</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.296003735902723</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.321924702353111</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.375846786759639</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.451436442549948</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.530617161781612</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.585835097646557</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.654562744301228</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.721728101061004</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.797584634415304</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.925816913670565</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -6280,7 +6280,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>1.42729964673622e-05</calOutputValue>
+                <calOutputValue>2.63760462061674e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -6417,40 +6417,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">1.42729964673622e-05</base-service>
+        <base-service year="2015">2.63760462061674e-05</base-service>
         <income-elasticity year="2020">20.3925053362938</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.86624323915935</income-elasticity>
+        <income-elasticity year="2025">3.34565822727655</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.34719020987282</income-elasticity>
+        <income-elasticity year="2030">3.69048413395292</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.13974303129122</income-elasticity>
+        <income-elasticity year="2035">-2.02300415330098</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.656531340498933</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.718490938541316</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.784144153198251</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.236931119534302</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.253649153852023</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.270210941661412</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.288182731373887</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.307699577665191</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.32402750616101</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.342307634186532</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.355359442314847</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.364522287509586</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.37397469023994</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -6519,7 +6519,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>4.17162183430753e-06</calOutputValue>
+                <calOutputValue>4.08568225602536e-06</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -6656,40 +6656,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">4.17162183430753e-06</base-service>
+        <base-service year="2015">4.08568225602536e-06</base-service>
         <income-elasticity year="2020">15.0105214511394</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.40655144112915</income-elasticity>
+        <income-elasticity year="2025">2.5215579096866</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">2.82783208283143</income-elasticity>
+        <income-elasticity year="2030">3.11785969150793</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.14388460603415</income-elasticity>
+        <income-elasticity year="2035">-2.03035530410965</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.716825618407386</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.861768995654148</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.01298561440987</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.317435793243486</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.345390815576211</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.381086788202973</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.424557012551424</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.460023375993997</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.486649261159867</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.506990490532182</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.514285185237833</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.514009709667174</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.517874935510697</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -6758,7 +6758,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.000227578477459534</calOutputValue>
+                <calOutputValue>0.000125762991273974</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -6895,40 +6895,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.000227578477459534</base-service>
+        <base-service year="2015">0.000125762991273974</base-service>
         <income-elasticity year="2020">25.0341587961405</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.17323908100559</income-elasticity>
+        <income-elasticity year="2025">3.89601690639235</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">4.09836778523153</income-elasticity>
+        <income-elasticity year="2030">4.51870384954174</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.51833709521062</income-elasticity>
+        <income-elasticity year="2035">-2.69499542036435</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">1.05699199517795</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.3788910484777</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.88501743166176</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.660638077415779</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">1.08157480771216</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">1.76088566309561</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">2.17170095040314</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">7.74009252580769</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">36.6967207245671</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">-7.24001984605473</income-elasticity>
+        <income-elasticity year="2085">-0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">-3.56341217443166</income-elasticity>
+        <income-elasticity year="2090">-0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">-2.57272259108576</income-elasticity>
+        <income-elasticity year="2095">-0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">-1.86423103941003</income-elasticity>
+        <income-elasticity year="2100">-0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -6997,7 +6997,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>9.87638002592951e-05</calOutputValue>
+                <calOutputValue>9.67291672841712e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -7134,40 +7134,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">9.87638002592951e-05</base-service>
+        <base-service year="2015">9.67291672841712e-05</base-service>
         <income-elasticity year="2020">18.7929698222508</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">1.74204192770257</income-elasticity>
+        <income-elasticity year="2025">3.12299960979586</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">3.17951888895303</income-elasticity>
+        <income-elasticity year="2030">3.50561613698392</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.14354608133958</income-elasticity>
+        <income-elasticity year="2035">-2.02975443457651</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">0.680736322157077</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">0.775773882745601</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">0.887961693793859</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.274742194619684</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.301777015441286</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.334581477613296</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.382192143763244</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.43982372496576</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.500453483032537</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.573549400292613</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.639791719907678</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.69938324034167</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.773289860150681</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -7236,7 +7236,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>7.14570621207923e-05</calOutputValue>
+                <calOutputValue>3.94881536262977e-05</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -7373,40 +7373,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">7.14570621207923e-05</base-service>
+        <base-service year="2015">3.94881536262977e-05</base-service>
         <income-elasticity year="2020">23.6915575876976</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.94623720278408</income-elasticity>
+        <income-elasticity year="2025">5.28178885269152</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">6.40057598030582</income-elasticity>
+        <income-elasticity year="2030">7.05703071005823</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">2.29899925543912</income-elasticity>
+        <income-elasticity year="2035">-4.08064354376457</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">1.49976702952184</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">2.17616348133012</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">3.99043105479988</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">2.66418636786143</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">2.74796311190595</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.607905370549994</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.66959693150662</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.838231487417316</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">1.08659399745419</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">1.87778754583316</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">4.3573706137729</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">-15.423692150059</income-elasticity>
+        <income-elasticity year="2095">-0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">-2.78738197583381</income-elasticity>
+        <income-elasticity year="2100">-0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>
@@ -7475,7 +7475,7 @@
               </minicam-energy-input>
               <share-weight>1</share-weight>
               <CalDataOutput>
-                <calOutputValue>0.00512352969886281</calOutputValue>
+                <calOutputValue>0.00427258804111568</calOutputValue>
               </CalDataOutput>
             </period>
             <period year="2020">
@@ -7612,40 +7612,40 @@
         <base-service year="1990">0</base-service>
         <base-service year="2005">0</base-service>
         <base-service year="2010">0</base-service>
-        <base-service year="2015">0.00512352969886281</base-service>
+        <base-service year="2015">0.00427258804111568</base-service>
         <income-elasticity year="2020">32.4263705949624</income-elasticity>
         <price-elasticity year="2020">0</price-elasticity>
-        <income-elasticity year="2025">2.86447787851994</income-elasticity>
+        <income-elasticity year="2025">5.1511833250643</income-elasticity>
         <price-elasticity year="2025">0</price-elasticity>
-        <income-elasticity year="2030">5.0317366659648</income-elasticity>
+        <income-elasticity year="2030">5.58671542832006</income-elasticity>
         <price-elasticity year="2030">0</price-elasticity>
-        <income-elasticity year="2035">1.6968778308967</income-elasticity>
+        <income-elasticity year="2035">-3.01189900293521</income-elasticity>
         <price-elasticity year="2035">0</price-elasticity>
-        <income-elasticity year="2040">1.06817904223117</income-elasticity>
+        <income-elasticity year="2040">0</income-elasticity>
         <price-elasticity year="2040">0</price-elasticity>
-        <income-elasticity year="2045">1.27423144446412</income-elasticity>
+        <income-elasticity year="2045">0</income-elasticity>
         <price-elasticity year="2045">0</price-elasticity>
-        <income-elasticity year="2050">1.53352151701895</income-elasticity>
+        <income-elasticity year="2050">0</income-elasticity>
         <price-elasticity year="2050">0</price-elasticity>
-        <income-elasticity year="2055">0.466140599241101</income-elasticity>
+        <income-elasticity year="2055">0</income-elasticity>
         <price-elasticity year="2055">0</price-elasticity>
-        <income-elasticity year="2060">0.473798062475253</income-elasticity>
+        <income-elasticity year="2060">0</income-elasticity>
         <price-elasticity year="2060">0</price-elasticity>
-        <income-elasticity year="2065">0.484033457714501</income-elasticity>
+        <income-elasticity year="2065">0</income-elasticity>
         <price-elasticity year="2065">0</price-elasticity>
-        <income-elasticity year="2070">0.545579040484532</income-elasticity>
+        <income-elasticity year="2070">0</income-elasticity>
         <price-elasticity year="2070">0</price-elasticity>
-        <income-elasticity year="2075">0.624063312063269</income-elasticity>
+        <income-elasticity year="2075">0</income-elasticity>
         <price-elasticity year="2075">0</price-elasticity>
-        <income-elasticity year="2080">0.648236587476199</income-elasticity>
+        <income-elasticity year="2080">0</income-elasticity>
         <price-elasticity year="2080">0</price-elasticity>
-        <income-elasticity year="2085">0.71800753032821</income-elasticity>
+        <income-elasticity year="2085">0</income-elasticity>
         <price-elasticity year="2085">0</price-elasticity>
-        <income-elasticity year="2090">0.774600862400751</income-elasticity>
+        <income-elasticity year="2090">0</income-elasticity>
         <price-elasticity year="2090">0</price-elasticity>
-        <income-elasticity year="2095">0.815872744008161</income-elasticity>
+        <income-elasticity year="2095">0</income-elasticity>
         <price-elasticity year="2095">0</price-elasticity>
-        <income-elasticity year="2100">0.907313670518438</income-elasticity>
+        <income-elasticity year="2100">0</income-elasticity>
         <price-elasticity year="2100">0</price-elasticity>
       </energy-final-demand>
     </region>

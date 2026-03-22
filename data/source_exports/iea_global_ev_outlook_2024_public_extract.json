@@ -1,0 +1,82 @@
+{
+  "source_id": "iea_global_ev_outlook_2024_public_extract",
+  "title": "IEA Global EV Outlook 2024 public extract",
+  "edition_year": 2024,
+  "source_urls": [
+    "https://www.iea.org/reports/global-ev-outlook-2024/trends-in-electric-cars",
+    "https://www.iea.org/reports/global-ev-outlook-2024/outlook-for-electric-mobility",
+    "https://www.iea.org/news/the-worlds-electric-car-fleet-continues-to-grow-strongly-with-2024-sales-set-to-reach-17-million"
+  ],
+  "scope_note": "This file archives only the public numeric anchors and short textual extracts that were visible on IEA public pages during the 2026-03-22 audit. It is not a raw IEA chart CSV.",
+  "public_numeric_anchors": {
+    "historical_sales_share_percent": {
+      "2018": 2.0,
+      "2023": 18.0
+    },
+    "ldv_or_car_sales_share_percent": {
+      "STEPS": {
+        "2030": 40.0,
+        "2035": 55.0
+      },
+      "APS": {
+        "2030": 43.72093023255814,
+        "2035": 66.66666666666667
+      },
+      "NZE": {
+        "2030": 65.0,
+        "2035": 100.0
+      }
+    },
+    "ldv_sales_million": {
+      "STEPS": {
+        "2030": 43.0,
+        "2035": 60.0
+      },
+      "APS": {
+        "2030": 47.0,
+        "2035": 75.0
+      }
+    },
+    "powertrain_proxy": {
+      "bev_share_of_electric_car_stock_2023": 0.7
+    }
+  },
+  "derived_values": {
+    "historical_sales_share_percent": {
+      "2020": {
+        "value": 4.816449370561385,
+        "formula": "2.0 * (18.0 / 2.0) ^ ((2020 - 2018) / (2023 - 2018))",
+        "note": "Compound-growth bridge from the public 2018 and 2023 GEVO-2024 sales-share anchors."
+      }
+    },
+    "ldv_or_car_sales_share_percent": {
+      "APS_2030": {
+        "value": 43.72093023255814,
+        "formula": "47.0 / (43.0 / 0.40)",
+        "note": "Derived from the public GEVO-2024 statements that electric LDV sales reach 43 million in 2030 and account for 40% of LDV sales in STEPS, while APS reaches 47 million in 2030."
+      }
+    }
+  },
+  "public_extracts": [
+    {
+      "label": "Historical sales share",
+      "source_url": "https://www.iea.org/reports/global-ev-outlook-2024/trends-in-electric-cars",
+      "extract": "Electric cars accounted for around 18% of all cars sold in 2023, up from 14% in 2022 and only 2% 5 years earlier, in 2018. Battery electric cars accounted for 70% of the electric car stock in 2023."
+    },
+    {
+      "label": "STEPS LDV anchor",
+      "source_url": "https://www.iea.org/reports/global-ev-outlook-2024/outlook-for-electric-mobility",
+      "extract": "Global electric light-duty vehicle sales are set to reach over 43 million in 2030 and 60 million in 2035 based on current policy settings, accounting for 40% of total LDV sales in 2030 and almost 55% by 2035."
+    },
+    {
+      "label": "APS LDV volume anchor",
+      "source_url": "https://www.iea.org/reports/global-ev-outlook-2024/outlook-for-electric-mobility",
+      "extract": "In the APS, sales of electric LDVs reach 47 million in 2030 and 75 million in 2035, representing two-thirds of sales in 2035."
+    },
+    {
+      "label": "NZE anchor",
+      "source_url": "https://www.iea.org/reports/global-ev-outlook-2024/outlook-for-electric-mobility",
+      "extract": "In the NZE Scenario, EV sales shares accelerate much more quickly in this decade, reaching about 65% in 2030 and 95% in 2035. 100% of light vehicle sales, including 2/3Ws, cars and vans, are zero-emission vehicles by 2035."
+    }
+  ]
+}

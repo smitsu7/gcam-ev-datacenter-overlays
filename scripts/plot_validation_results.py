@@ -33,12 +33,34 @@ def load_csv(path: Path) -> pd.DataFrame:
     return df
 
 
-def validate_outputs(detail_df: pd.DataFrame, summary_df: pd.DataFrame):
+def detect_gcam_root(script_path: Path) -> Path | None:
+    candidates = [
+        script_path.resolve().parent.parent,
+        script_path.resolve().parent.parent.parent / "gcam-v7.0-Mac_arm64-Release-Package",
+    ]
+    for candidate in candidates:
+        if (candidate / "input" / "gcamdata" / "xml" / "building_det.xml").exists():
+            return candidate
+    return None
+
+
+def load_expected_regions(script_path: Path):
+    gcam_root = detect_gcam_root(script_path)
+    if gcam_root is None:
+        return []
+
+    building_det = gcam_root / "input" / "gcamdata" / "xml" / "building_det.xml"
+    root = pd.read_xml(building_det, xpath=".//region")
+    return sorted(root["name"].dropna().astype(str).unique().tolist())
+
+
+def validate_outputs(detail_df: pd.DataFrame, summary_df: pd.DataFrame, expected_regions):
     report = {
         "required_queries_present": {},
         "missing_summary_series": [],
         "missing_transport_series": [],
         "missing_primary_fuel_rows": [],
+        "missing_query_regions": [],
     }
 
     for query in [FINAL_QUERY, PRIMARY_QUERY]:
@@ -66,26 +88,66 @@ def validate_outputs(detail_df: pd.DataFrame, summary_df: pd.DataFrame):
                     {"scenario": scenario, "query": query, "years": seen_years}
                 )
 
+            if expected_regions:
+                seen_regions = sorted(
+                    detail_df.loc[
+                        (detail_df["query"] == query)
+                        & (detail_df["scenario"] == scenario),
+                        "region",
+                    ]
+                    .dropna()
+                    .astype(str)
+                    .unique()
+                    .tolist()
+                )
+                missing_regions = sorted(set(expected_regions) - set(seen_regions))
+                if missing_regions:
+                    report["missing_query_regions"].append(
+                        {
+                            "scenario": scenario,
+                            "query": query,
+                            "regions": missing_regions,
+                        }
+                    )
+
         transport = detail_df[
             (detail_df["query"] == FINAL_QUERY)
             & (detail_df["scenario"] == scenario)
             & (detail_df["sector"] == "transportation")
         ]
-        transport_years = sorted(
-            transport["year"].dropna().astype(int).unique().tolist()
+        transport_regions = expected_regions or sorted(
+            transport["region"].dropna().astype(str).unique().tolist()
         )
-        if transport_years != years:
-            report["missing_transport_series"].append(
-                {"scenario": scenario, "years": transport_years}
+        for region in transport_regions:
+            transport_years = sorted(
+                transport.loc[transport["region"] == region, "year"]
+                .dropna()
+                .astype(int)
+                .unique()
+                .tolist()
             )
+            if transport_years != years:
+                report["missing_transport_series"].append(
+                    {"scenario": scenario, "region": region, "years": transport_years}
+                )
 
         primary = detail_df[
             (detail_df["query"] == PRIMARY_QUERY)
             & (detail_df["scenario"] == scenario)
         ]
-        for fuel in primary_fuels:
+        primary_pairs = (
+            primary.loc[:, ["region", "fuel"]]
+            .dropna()
+            .astype(str)
+            .drop_duplicates()
+            .itertuples(index=False, name=None)
+        )
+        for region, fuel in primary_pairs:
             fuel_years = sorted(
-                primary.loc[primary["fuel"] == fuel, "year"]
+                primary.loc[
+                    (primary["fuel"] == fuel) & (primary["region"] == region),
+                    "year",
+                ]
                 .dropna()
                 .astype(int)
                 .unique()
@@ -93,15 +155,25 @@ def validate_outputs(detail_df: pd.DataFrame, summary_df: pd.DataFrame):
             )
             if fuel_years != years:
                 report["missing_primary_fuel_rows"].append(
-                    {"scenario": scenario, "fuel": fuel, "years": fuel_years}
+                    {
+                        "scenario": scenario,
+                        "region": region,
+                        "fuel": fuel,
+                        "years": fuel_years,
+                    }
                 )
 
     report["required_queries_present"] = {
         key: bool(val) for key, val in report["required_queries_present"].items()
     }
+    report["expected_regions"] = expected_regions
+    report["observed_regions"] = sorted(
+        detail_df["region"].dropna().astype(str).unique().tolist()
+    )
     report["all_checks_passed"] = (
         all(report["required_queries_present"].values())
         and not report["missing_summary_series"]
+        and not report["missing_query_regions"]
         and not report["missing_transport_series"]
         and not report["missing_primary_fuel_rows"]
     )
@@ -222,6 +294,10 @@ def plot_primary_fuel_heatmap(detail_df: pd.DataFrame, out_path: Path):
     for idx, scenario in enumerate(SCENARIOS):
         ax = axes[idx]
         subset = primary[primary["scenario"] == scenario]
+        subset = (
+            subset.groupby(["fuel", "year"], as_index=False)["delta_value"]
+            .sum()
+        )
         pivot = (
             subset.pivot(index="fuel", columns="year", values="delta_value")
             .reindex(index=fuels, columns=years)
@@ -253,17 +329,25 @@ def plot_primary_fuel_heatmap(detail_df: pd.DataFrame, out_path: Path):
     plt.close(fig)
 
 
+def write_regional_exports(detail_df: pd.DataFrame, out_dir: Path):
+    final_detail = detail_df[detail_df["query"] == FINAL_QUERY].copy()
+    primary_detail = detail_df[detail_df["query"] == PRIMARY_QUERY].copy()
+    final_detail.to_csv(out_dir / "regional_final_energy_detail.csv", index=False)
+    primary_detail.to_csv(out_dir / "regional_primary_energy_detail.csv", index=False)
+
+
 def main():
     args = parse_args()
     detail_df = load_csv(args.detail)
     summary_df = load_csv(args.summary)
-
-    report = validate_outputs(detail_df, summary_df)
+    expected_regions = load_expected_regions(Path(__file__))
+    report = validate_outputs(detail_df, summary_df, expected_regions)
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
     (args.out_dir / "validation_report.json").write_text(
         json.dumps(report, indent=2)
     )
+    write_regional_exports(detail_df, args.out_dir)
 
     plot_overview(summary_df, args.out_dir / "overview_before_after.png")
     plot_final_sector_delta(detail_df, args.out_dir / "final_energy_sector_delta.png")
@@ -273,6 +357,8 @@ def main():
     print(f"Wrote plot to {args.out_dir / 'overview_before_after.png'}")
     print(f"Wrote plot to {args.out_dir / 'final_energy_sector_delta.png'}")
     print(f"Wrote plot to {args.out_dir / 'primary_energy_fuel_delta.png'}")
+    print(f"Wrote regional export to {args.out_dir / 'regional_final_energy_detail.csv'}")
+    print(f"Wrote regional export to {args.out_dir / 'regional_primary_energy_detail.csv'}")
 
 
 if __name__ == "__main__":

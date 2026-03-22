@@ -1,6 +1,23 @@
 {
-  "anchor_years": [2020, 2025, 2030, 2035, 2040, 2045, 2050],
-  "future_years": [2020, 2025, 2030, 2035, 2040, 2045, 2050, 2055, 2060, 2065, 2070, 2075, 2080, 2085, 2090, 2095, 2100],
+  "future_years": [
+    2020,
+    2025,
+    2030,
+    2035,
+    2040,
+    2045,
+    2050,
+    2055,
+    2060,
+    2065,
+    2070,
+    2075,
+    2080,
+    2085,
+    2090,
+    2095,
+    2100
+  ],
   "base_transport_files": {
     "SSP1": "transportation_UCD_SSP1.xml",
     "SSP2": "transportation_UCD_CORE.xml",
@@ -8,119 +25,74 @@
     "SSP4": "transportation_UCD_SSP3.xml",
     "SSP5": "transportation_UCD_SSP5.xml"
   },
-  "share_weights": {
-    "SSP1": {
-      "BEV": [0.10, 0.30, 0.55, 0.85, 1.20, 1.45, 1.70],
-      "PHEV": [0.08, 0.18, 0.25, 0.24, 0.20, 0.14, 0.08],
-      "FCEV": [0.02, 0.05, 0.10, 0.18, 0.28, 0.40, 0.55],
-      "Hybrid Liquids": [0.90, 1.00, 0.95, 0.80, 0.60, 0.45, 0.30],
-      "Liquids": [0.85, 0.75, 0.65, 0.50, 0.40, 0.30, 0.22],
-      "NG": [0.60, 0.55, 0.45, 0.35, 0.28, 0.22, 0.18]
+  "source_package": "data/source_exports/iea_global_ev_outlook_2024_public_extract.json",
+  "scenario_to_iea": {
+    "SSP1": "NZE",
+    "SSP2": "STEPS",
+    "SSP3": "STEPS",
+    "SSP4": "STEPS",
+    "SSP5": "APS"
+  },
+  "sales_share_percent": {
+    "historical_public": {
+      "2018": 2.0,
+      "2023": 18.0
     },
-    "SSP2": {
-      "BEV": [0.05, 0.15, 0.30, 0.50, 0.75, 0.95, 1.10],
-      "PHEV": [0.06, 0.12, 0.18, 0.18, 0.15, 0.11, 0.07],
-      "FCEV": [0.01, 0.03, 0.06, 0.10, 0.16, 0.22, 0.30],
-      "Hybrid Liquids": [0.95, 1.00, 1.00, 0.90, 0.75, 0.60, 0.45],
-      "Liquids": [1.00, 0.95, 0.90, 0.80, 0.70, 0.60, 0.50],
-      "NG": [0.80, 0.75, 0.65, 0.55, 0.45, 0.35, 0.28]
-    },
-    "SSP3": {
-      "BEV": [0.01, 0.04, 0.10, 0.18, 0.28, 0.38, 0.48],
-      "PHEV": [0.02, 0.05, 0.08, 0.08, 0.07, 0.06, 0.05],
-      "FCEV": [0.00, 0.01, 0.03, 0.05, 0.08, 0.12, 0.16],
-      "Hybrid Liquids": [0.90, 0.95, 1.00, 0.95, 0.88, 0.80, 0.72],
-      "Liquids": [1.10, 1.05, 1.00, 0.95, 0.90, 0.85, 0.80],
-      "NG": [0.95, 0.90, 0.85, 0.78, 0.72, 0.65, 0.58]
-    },
-    "SSP4": {
-      "BEV": [0.01, 0.04, 0.10, 0.18, 0.28, 0.38, 0.48],
-      "PHEV": [0.02, 0.05, 0.08, 0.08, 0.07, 0.06, 0.05],
-      "FCEV": [0.00, 0.01, 0.03, 0.05, 0.08, 0.12, 0.16],
-      "Hybrid Liquids": [0.90, 0.95, 1.00, 0.95, 0.88, 0.80, 0.72],
-      "Liquids": [1.10, 1.05, 1.00, 0.95, 0.90, 0.85, 0.80],
-      "NG": [0.95, 0.90, 0.85, 0.78, 0.72, 0.65, 0.58]
-    },
-    "SSP5": {
-      "BEV": [0.08, 0.22, 0.42, 0.68, 0.95, 1.20, 1.40],
-      "PHEV": [0.07, 0.14, 0.20, 0.19, 0.16, 0.12, 0.08],
-      "FCEV": [0.02, 0.05, 0.10, 0.16, 0.24, 0.34, 0.46],
-      "Hybrid Liquids": [0.92, 0.98, 0.96, 0.84, 0.68, 0.52, 0.38],
-      "Liquids": [0.95, 0.90, 0.82, 0.72, 0.60, 0.48, 0.36],
-      "NG": [0.70, 0.64, 0.56, 0.48, 0.40, 0.32, 0.24]
+    "scenario_public": {
+      "STEPS": {
+        "2030": 40.0,
+        "2035": 55.0
+      },
+      "APS": {
+        "2030": 43.72093023255814,
+        "2035": 66.66666666666667
+      },
+      "NZE": {
+        "2030": 65.0,
+        "2035": 100.0
+      }
     }
   },
-  "cost_multipliers": {
-    "SSP1": {
-      "BEV": [0.95, 0.92, 0.88, 0.84, 0.82, 0.80, 0.78],
-      "FCEV": [0.98, 0.95, 0.90, 0.86, 0.83, 0.81, 0.79],
-      "PHEV": [0.98, 0.96, 0.93, 0.90, 0.88, 0.87, 0.86]
+  "anchor_formulas": {
+    "historical_2020_percent": "2.0 * (18.0 / 2.0) ^ ((2020 - 2018) / (2023 - 2018))",
+    "scenario_2025_percent": "18.0 + (share_2030_s - 18.0) * ((2025 - 2023) / (2030 - 2023))",
+    "post_2035_rule": "Hold the 2035 scenario anchor constant through 2100."
+  },
+  "powertrain_proxy": {
+    "source_basis": "GEVO 2024 public text reports that battery electric cars accounted for 70% of the electric car stock in 2023. This repository uses that public stock split as a transparent proxy for within-EV technology mix where no public IEA chart export is archived.",
+    "default_mix": {
+      "BEV": 0.7,
+      "PHEV": 0.3,
+      "FCEV": 0.0
     },
-    "SSP2": {
-      "BEV": [0.98, 0.96, 0.93, 0.90, 0.88, 0.86, 0.84],
-      "FCEV": [1.00, 0.98, 0.95, 0.92, 0.89, 0.87, 0.85],
-      "PHEV": [1.00, 0.98, 0.95, 0.93, 0.91, 0.89, 0.88]
-    },
-    "SSP3": {
-      "BEV": [1.04, 1.03, 1.01, 0.99, 0.98, 0.97, 0.96],
-      "FCEV": [1.06, 1.05, 1.03, 1.01, 1.00, 0.99, 0.98],
-      "PHEV": [1.03, 1.02, 1.00, 0.99, 0.98, 0.97, 0.96]
-    },
-    "SSP4": {
-      "BEV": [1.04, 1.03, 1.01, 0.99, 0.98, 0.97, 0.96],
-      "FCEV": [1.06, 1.05, 1.03, 1.01, 1.00, 0.99, 0.98],
-      "PHEV": [1.03, 1.02, 1.00, 0.99, 0.98, 0.97, 0.96]
-    },
-    "SSP5": {
-      "BEV": [0.96, 0.93, 0.89, 0.85, 0.82, 0.80, 0.78],
-      "FCEV": [0.99, 0.96, 0.92, 0.88, 0.85, 0.83, 0.81],
-      "PHEV": [0.99, 0.96, 0.92, 0.89, 0.87, 0.86, 0.85]
+    "nze_2035_mix": {
+      "BEV": 1.0,
+      "PHEV": 0.0,
+      "FCEV": 0.0
     }
   },
-  "coefficient_multipliers": {
-    "SSP1": {
-      "BEV": [0.99, 0.98, 0.96, 0.94, 0.93, 0.92, 0.90],
-      "FCEV": [1.00, 0.99, 0.97, 0.95, 0.93, 0.92, 0.90],
-      "PHEV": [1.00, 0.99, 0.98, 0.96, 0.95, 0.94, 0.93]
-    },
-    "SSP2": {
-      "BEV": [1.00, 0.99, 0.98, 0.96, 0.95, 0.94, 0.93],
-      "FCEV": [1.01, 1.00, 0.99, 0.97, 0.96, 0.95, 0.94],
-      "PHEV": [1.01, 1.00, 0.99, 0.98, 0.97, 0.96, 0.95]
-    },
-    "SSP3": {
-      "BEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
-      "FCEV": [1.03, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
-      "PHEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97]
-    },
-    "SSP4": {
-      "BEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
-      "FCEV": [1.03, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97],
-      "PHEV": [1.02, 1.02, 1.01, 1.00, 0.99, 0.98, 0.97]
-    },
-    "SSP5": {
-      "BEV": [1.00, 0.99, 0.97, 0.95, 0.94, 0.93, 0.91],
-      "FCEV": [1.01, 1.00, 0.98, 0.96, 0.94, 0.93, 0.91],
-      "PHEV": [1.01, 1.00, 0.99, 0.97, 0.96, 0.95, 0.94]
-    }
+  "weight_translation": {
+    "reference_non_plugin_techs": [
+      "Hybrid Liquids",
+      "Liquids",
+      "NG"
+    ],
+    "non_plugin_share_weight": 1.0,
+    "ev_share_clip": 0.99,
+    "residual_floor": 0.01,
+    "formula": "share_weight_plugin = N_ref * target_plugin_share / max(1 - clipped_total_ev_share, residual_floor)"
   },
   "phev": {
     "cost_blend": {
-      "BEV": 0.40,
-      "Hybrid Liquids": 0.60
+      "BEV": 0.4,
+      "Hybrid Liquids": 0.6
     },
     "capital_coef_blend": {
-      "BEV": 0.40,
-      "Hybrid Liquids": 0.60
+      "BEV": 0.4,
+      "Hybrid Liquids": 0.6
     },
     "liquids_coefficient_source": "Hybrid Liquids",
-    "utility_factor": {
-      "SSP1": [0.55, 0.58, 0.60, 0.62, 0.64, 0.65, 0.66],
-      "SSP2": [0.52, 0.54, 0.56, 0.58, 0.60, 0.61, 0.62],
-      "SSP3": [0.45, 0.47, 0.49, 0.50, 0.52, 0.53, 0.54],
-      "SSP4": [0.45, 0.47, 0.49, 0.50, 0.52, 0.53, 0.54],
-      "SSP5": [0.53, 0.56, 0.59, 0.61, 0.62, 0.63, 0.64]
-    }
+    "utility_factor": 0.55
   },
   "query_titles": [
     "transport final energy by tech and fuel",
@@ -140,8 +112,7 @@
   ],
   "reference_basis": {
     "institutional": [
-      "IEA (2025), Global EV Outlook 2025",
-      "IEA (2025), World Energy Outlook 2025",
+      "IEA (2024), Global EV Outlook 2024",
       "GCAM v7.0 documentation"
     ],
     "academic": [
@@ -151,17 +122,44 @@
       "Riahi et al. (2017), The shared socioeconomic pathways and their energy, land use, and greenhouse gas emissions implications: An overview"
     ]
   },
-  "method_notes": {
-    "share_weights": "IEA market and scenario evidence is translated into GCAM share-weights, not copied one-for-one as sales shares. Ordering is preserved across SSPs and the schedules are calibrated so BEV adoption is fastest in SSP1, central in SSP2, slowest in SSP3 and SSP4, and technology-led but not climate-constrained in SSP5.",
-    "cost_multipliers": "Technology cost schedules encode faster battery and fuel-cell learning in SSP1 and SSP5, central progress in SSP2, and slower progress in SSP3 and SSP4.",
-    "coefficient_multipliers": "Energy-intensity improvements are imposed through minicam-energy-input coefficients, with BEV and FCEV improving faster than PHEV and slower SSPs retaining higher coefficients.",
-    "phev": "PHEV is represented as a true dual-fuel transport technology with electricity and refined liquids inputs. Utility-factor schedules peak higher in faster-electrifying SSPs and lower in delayed-adoption SSPs."
-  },
   "source_mapping": {
-    "SSP1": "IEA NZE-like upper-bound EV pathway",
-    "SSP2": "IEA STEPS-like central EV pathway",
-    "SSP3": "Below-IEA-STEPS delayed EV adoption with CPS-like policy weakness",
-    "SSP4": "Same transport EV path as SSP3 pending additional inequality-specific evidence",
-    "SSP5": "Technology-led fast EV adoption between IEA STEPS and IEA NZE"
+    "SSP1": "GEVO 2024 NZE anchor path",
+    "SSP2": "GEVO 2024 STEPS anchor path",
+    "SSP3": "GEVO 2024 STEPS anchor path",
+    "SSP4": "GEVO 2024 STEPS anchor path",
+    "SSP5": "GEVO 2024 APS anchor path"
+  },
+  "method_notes": {
+    "ev_sales_share": "The top-level EV adoption path is now anchored to a single IEA edition, Global EV Outlook 2024. Historical public anchors are 2018 = 2% and 2023 = 18%. The 2020 anchor is a CAGR bridge within those public values. The 2025 anchor is a linear interpolation from the 2023 public value to the chosen 2030 scenario anchor.",
+    "powertrain_split": "The repository no longer uses non-archived IEA Data Explorer decimals for BEV/PHEV/FCEV sales mix. Instead it uses the public GEVO 2024 statement that BEVs accounted for 70% of electric-car stock in 2023 as a transparent proxy mix for non-NZE scenarios. For NZE, PHEV is forced to zero by 2035 because the same IEA edition states that light-vehicle sales are zero-emission by then.",
+    "share_weights": "GCAM does not take market shares directly. The add-on therefore converts target plugin market shares into GCAM share-weight ratios using a documented relative-odds formula against the non-plugin technologies that remain at unit weight.",
+    "technical_assumptions": "EV-specific cost multipliers and energy-coefficient multipliers are not scenario-specific. Existing GCAM BEV/FCEV technology coefficients are preserved, and PHEV remains a blended BEV-plus-hybrid technology with a constant utility factor of 0.55."
+  },
+  "provenance_audit_2026_03_22": {
+    "status": "Anchored to one public IEA edition, GEVO 2024, with explicit bridge formulas and a documented BEV/PHEV proxy mix.",
+    "public_iea_values_verified": [
+      "2018 electric-car sales share = 2%",
+      "2023 electric-car sales share = 18%",
+      "2023 BEV share of electric-car stock = 70%",
+      "STEPS 2030 LDV sales share = 40%",
+      "STEPS 2035 LDV sales share = 55%",
+      "APS 2030 electric LDV sales = 47 million",
+      "APS 2035 electric LDV sales = 75 million and two-thirds sales share",
+      "NZE 2030 EV sales share = 65%",
+      "NZE 2035 light-vehicle sales are zero-emission"
+    ],
+    "computed_from_source_or_repo_rules": [
+      "2020 historical sales-share bridge",
+      "2025 scenario bridge",
+      "APS 2030 share from public APS and STEPS LDV volume/share statements",
+      "GCAM share-weight conversion formula",
+      "Use of 70/30/0 BEV/PHEV/FCEV stock proxy for non-NZE scenarios",
+      "PHEV utility factor and 40/60 blending weights"
+    ],
+    "direct_iea_claims_that_should_not_be_made": [
+      "That BEV/PHEV/FCEV mix is a direct IEA sales table import",
+      "That SSP3 and SSP4 have distinct public GEVO 2024 global EV anchor paths",
+      "That the GCAM share-weight ratios themselves are published by IEA"
+    ]
   }
 }

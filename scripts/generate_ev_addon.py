@@ -25,14 +25,122 @@ def load_json(path: Path):
     return json.loads(path.read_text())
 
 
-def schedule(anchor_years, future_years, values):
-    mapping = {}
-    for year, value in zip(anchor_years, values):
-        mapping[year] = value
-    tail = values[-1]
+def load_source_package(addon_root: Path, assumptions):
+    return load_json(addon_root / assumptions["source_package"])
+
+
+def neutral_schedule(future_years, value=1.0):
+    return {year: value for year in future_years}
+
+
+def interpolate_series(anchor_points, years):
+    points = sorted((int(year), float(value)) for year, value in anchor_points.items())
+    if not points:
+        raise ValueError("No anchor points supplied")
+    out = {}
+    for year in years:
+        if year <= points[0][0]:
+            out[year] = points[0][1]
+            continue
+        if year >= points[-1][0]:
+            out[year] = points[-1][1]
+            continue
+        for (left_year, left_value), (right_year, right_value) in zip(points, points[1:]):
+            if left_year <= year <= right_year:
+                span = right_year - left_year
+                if span == 0:
+                    out[year] = right_value
+                else:
+                    weight = (year - left_year) / span
+                    out[year] = left_value + (right_value - left_value) * weight
+                break
+    return out
+
+
+def normalize_mix(mix):
+    total = sum(mix.values())
+    if total <= 0:
+        raise ValueError(f"Invalid powertrain mix with non-positive total: {mix}")
+    return {tech: value / total for tech, value in mix.items()}
+
+
+def interpolate_mix(anchor_mixes, years):
+    techs = sorted(next(iter(anchor_mixes.values())).keys())
+    series_by_tech = {
+        tech: interpolate_series({year: mix[tech] for year, mix in anchor_mixes.items()}, years)
+        for tech in techs
+    }
+    out = {}
+    for year in years:
+        out[year] = normalize_mix({tech: series_by_tech[tech][year] for tech in techs})
+    return out
+
+
+def build_total_ev_share_schedule(assumptions, source_package, ssp_name: str):
+    iea_scenario = assumptions["scenario_to_iea"][ssp_name]
+    historical = source_package["public_numeric_anchors"]["historical_sales_share_percent"]
+    scenario_anchors = source_package["public_numeric_anchors"]["ldv_or_car_sales_share_percent"][iea_scenario]
+
+    share_2018 = historical["2018"] / 100.0
+    share_2023 = historical["2023"] / 100.0
+    share_2030 = scenario_anchors["2030"] / 100.0
+    share_2035 = scenario_anchors["2035"] / 100.0
+
+    share_2020 = share_2018 * ((share_2023 / share_2018) ** ((2020 - 2018) / (2023 - 2018)))
+    share_2025 = share_2023 + (share_2030 - share_2023) * ((2025 - 2023) / (2030 - 2023))
+
+    anchor_points = {
+        2020: share_2020,
+        2025: share_2025,
+        2030: share_2030,
+        2035: share_2035,
+    }
+
+    return interpolate_series(anchor_points, assumptions["future_years"])
+
+
+def build_powertrain_mix_schedule(assumptions, ssp_name: str):
+    default_mix = assumptions["powertrain_proxy"]["default_mix"]
+    mix_2035 = (
+        assumptions["powertrain_proxy"]["nze_2035_mix"]
+        if assumptions["scenario_to_iea"][ssp_name] == "NZE"
+        else default_mix
+    )
+
+    anchor_mixes = {
+        2020: default_mix,
+        2025: default_mix,
+        2030: default_mix,
+        2035: mix_2035,
+    }
+    return interpolate_mix(anchor_mixes, assumptions["future_years"])
+
+
+def build_share_weight_schedule(assumptions, source_package, ssp_name: str):
+    future_years = assumptions["future_years"]
+    total_ev_share = build_total_ev_share_schedule(assumptions, source_package, ssp_name)
+    powertrain_mix = build_powertrain_mix_schedule(assumptions, ssp_name)
+
+    rule = assumptions["weight_translation"]
+    reference_non_plugin_techs = rule["reference_non_plugin_techs"]
+    n_ref = len(reference_non_plugin_techs)
+    non_plugin_weight = float(rule["non_plugin_share_weight"])
+    ev_share_clip = float(rule["ev_share_clip"])
+    residual_floor = float(rule["residual_floor"])
+
+    share_sched = {tech: {} for tech in sorted(PLUGIN_TECHS.union(reference_non_plugin_techs))}
     for year in future_years:
-        mapping.setdefault(year, tail)
-    return mapping
+        clipped_ev_share = min(total_ev_share[year], ev_share_clip)
+        residual_share = max(1.0 - clipped_ev_share, residual_floor)
+
+        for tech in reference_non_plugin_techs:
+            share_sched[tech][year] = non_plugin_weight
+
+        for tech in PLUGIN_TECHS:
+            target_plugin_share = clipped_ev_share * powertrain_mix[year][tech]
+            share_sched[tech][year] = n_ref * target_plugin_share / residual_share
+
+    return share_sched
 
 
 def text_as_float(elem, path):
@@ -178,16 +286,15 @@ def build_tran_technology(tech_name: str, future_years, share_sched):
     return tech
 
 
-def build_transport_overlay(gcam_root: Path, assumptions, ssp_name: str):
+def build_transport_overlay(gcam_root: Path, assumptions, source_package, ssp_name: str):
     transport_file = gcam_root / "input" / "gcamdata" / "xml" / assumptions["base_transport_files"][ssp_name]
     root = ET.parse(transport_file).getroot()
 
-    anchor_years = assumptions["anchor_years"]
     future_years = assumptions["future_years"]
-    share_sched = {tech: schedule(anchor_years, future_years, vals) for tech, vals in assumptions["share_weights"][ssp_name].items()}
-    cost_sched = {tech: schedule(anchor_years, future_years, vals) for tech, vals in assumptions["cost_multipliers"][ssp_name].items()}
-    coef_sched = {tech: schedule(anchor_years, future_years, vals) for tech, vals in assumptions["coefficient_multipliers"][ssp_name].items()}
-    uf_sched = schedule(anchor_years, future_years, assumptions["phev"]["utility_factor"][ssp_name])
+    share_sched = build_share_weight_schedule(assumptions, source_package, ssp_name)
+    cost_sched = {tech: neutral_schedule(future_years, 1.0) for tech in ["BEV", "FCEV", "PHEV"]}
+    coef_sched = {tech: neutral_schedule(future_years, 1.0) for tech in ["BEV", "FCEV", "PHEV"]}
+    uf_sched = neutral_schedule(future_years, float(assumptions["phev"]["utility_factor"]))
 
     scenario = ET.Element("scenario")
     world = ET.SubElement(scenario, "world")
@@ -260,6 +367,19 @@ def build_query_subset(gcam_root: Path, assumptions):
     return out
 
 
+def parse_gcam_regions(gcam_root: Path):
+    building_det = ET.parse(
+        gcam_root / "input" / "gcamdata" / "xml" / "building_det.xml"
+    ).getroot()
+    return sorted(
+        {
+            region.get("name")
+            for region in building_det.findall(".//region")
+            if region.get("name")
+        }
+    )
+
+
 def build_validation_query_file(gcam_root: Path, assumptions):
     main_queries = ET.parse(gcam_root / "output" / "queries" / "Main_queries.xml").getroot()
     diagnostics_queries = ET.parse(
@@ -267,7 +387,10 @@ def build_validation_query_file(gcam_root: Path, assumptions):
     ).getroot()
 
     out = ET.Element("queries")
-    region_name = assumptions["validation_region"]
+    if assumptions["validation_region"] == "Global":
+        region_names = parse_gcam_regions(gcam_root)
+    else:
+        region_names = [assumptions["validation_region"]]
 
     for title in assumptions["validation_query_titles"]:
         source = find_query_by_title(main_queries, title)
@@ -276,9 +399,10 @@ def build_validation_query_file(gcam_root: Path, assumptions):
         if source is None:
             raise SystemExit(f"Could not find validation query titled '{title}'")
 
-        aquery = ET.SubElement(out, "aQuery")
-        ET.SubElement(aquery, "region", {"name": region_name})
-        aquery.append(deepcopy(source))
+        for region_name in region_names:
+            aquery = ET.SubElement(out, "aQuery")
+            ET.SubElement(aquery, "region", {"name": region_name})
+            aquery.append(deepcopy(source))
 
     return out
 
@@ -495,12 +619,13 @@ def main():
     addon_root = Path(__file__).resolve().parents[1]
     generated_root = addon_root / "generated"
     assumptions = load_json(addon_root / "data" / "ev_ssp_assumptions.json")
+    source_package = load_source_package(addon_root, assumptions)
 
     if not args.gcam_root.exists():
         raise SystemExit(f"GCAM root not found: {args.gcam_root}")
 
     for ssp_name in ["SSP1", "SSP2", "SSP3", "SSP4", "SSP5"]:
-        overlay = build_transport_overlay(args.gcam_root, assumptions, ssp_name)
+        overlay = build_transport_overlay(args.gcam_root, assumptions, source_package, ssp_name)
         write_xml(overlay, generated_root / "input" / "gcamdata" / "xml" / f"transportation_EV_{ssp_name}.xml")
 
     write_xml(build_query_subset(args.gcam_root, assumptions), generated_root / "output" / "queries" / "EV_SSP_queries.xml")
