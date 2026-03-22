@@ -26,6 +26,27 @@ then
     exit 1
 fi
 
+PLOT_PYTHON=""
+for CANDIDATE in "${GCAM_PLOT_PYTHON}" /Users/sekiyamitsuna/miniconda3/bin/python python3 python
+do
+    if [ -z "$CANDIDATE" ]
+    then
+        continue
+    fi
+    if env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 \
+        "$CANDIDATE" -c "import matplotlib" >/dev/null 2>&1
+    then
+        PLOT_PYTHON="$CANDIDATE"
+        break
+    fi
+done
+
+if [ -z "$PLOT_PYTHON" ]
+then
+    >&2 echo "ERROR: Could not find a Python interpreter with matplotlib."
+    exit 1
+fi
+
 mkdir -p ../output/three_way_validation/plots
 
 "$JAVA_HOME/bin/java" -Xmx4g \
@@ -46,14 +67,16 @@ mkdir -p ../output/three_way_validation/plots
   -b xmldb_batch_ssp_ev_dc_for_three_way_validation.xml \
   -l ../output/three_way_validation/modelinterface_ev_dc.log
 
-python3 ../scripts/compare_ssp_three_way_validation.py \
+env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 \
+  "$PLOT_PYTHON" ../scripts/compare_ssp_three_way_validation.py \
   --baseline ../output/three_way_validation/baseline_validation.csv \
   --ev ../output/three_way_validation/ev_validation.csv \
   --ev-dc ../output/three_way_validation/ev_dc_validation.csv \
   --out ../output/three_way_validation/three_way_detail.csv \
   --summary ../output/three_way_validation/three_way_summary.csv
 
-python3 ../scripts/plot_three_way_validation_results.py \
+env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 NUMEXPR_NUM_THREADS=1 \
+  "$PLOT_PYTHON" ../scripts/plot_three_way_validation_results.py \
   --detail ../output/three_way_validation/three_way_detail.csv \
   --summary ../output/three_way_validation/three_way_summary.csv \
   --out-dir ../output/three_way_validation/plots

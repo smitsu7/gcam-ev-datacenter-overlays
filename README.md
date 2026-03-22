@@ -481,6 +481,14 @@ cd /path/to/gcam-v7.0-Mac_arm64-Release-Package/exe
 ./run-validate-ssp-three-way.command
 ```
 
+If the default Python on your machine does not have `matplotlib`, set:
+
+```bash
+export GCAM_PLOT_PYTHON=/path/to/python-with-matplotlib
+```
+
+before running `./run-validate-ssp-three-way.command`.
+
 This writes:
 
 - `output/three_way_validation/baseline_validation.csv`
@@ -522,7 +530,9 @@ python3 scripts/plot_three_way_validation_results.py \
 - the EV overlay was rerun after the direct-IEA translation refactor and the refreshed validation outputs now exist under `output/ev_validation/`
 - the refreshed EV validation passed all structural checks in `output/ev_validation/plots/validation_report.json`
 - the refreshed EV validation covers `SSP1` to `SSP5`, all model years from `1990` to `2100`, and all expected GCAM primary-energy regions
-- the `EV + datacenter` three-way validation has not yet been refreshed after the current EV refactor and should still be treated as pending
+- the refreshed three-way validation now exists under `output/three_way_validation/`
+- the refreshed three-way validation passed all structural checks in `output/three_way_validation/plots/validation_report.json`
+- the refreshed three-way validation covers `SSP1` to `SSP5`, all model years from `1990` to `2100`, all expected GCAM primary-energy regions, and the explicit `comm datacenter sector`
 
 ## Validation Figures
 
@@ -544,17 +554,35 @@ These refreshed figures are stored in `docs/figures/ev_validation/`:
 
 ![Primary energy fuel delta](docs/figures/ev_validation/primary_energy_fuel_delta.png)
 
+The four figures below are the refreshed three-way validation figures for `baseline`, `baseline + EV`, and `baseline + EV + datacenter`.
+
+Representative headline values from `three_way_summary.csv` are:
+
+- `SSP2 2050`
+  - total final energy: `713.38 EJ -> 707.62 EJ -> 711.76 EJ`
+  - primary energy: `670.85 EJ -> 669.28 EJ -> 675.61 EJ`
+- `SSP5 2100`
+  - total final energy: `1130.64 EJ -> 1121.58 EJ -> 1127.65 EJ`
+  - primary energy: `922.54 EJ -> 920.43 EJ -> 927.86 EJ`
+
+These refreshed figures are stored in `docs/figures/three_way_validation/`:
+
+![Three-way total overview](docs/figures/three_way_validation/overview_total_final_primary.png)
+
+![Three-way total delta](docs/figures/three_way_validation/delta_total_final_primary.png)
+
+![Transport and datacenter final energy](docs/figures/three_way_validation/transport_and_datacenter_final_energy.png)
+
+![Primary fuel shift from EV+DC relative to EV](docs/figures/three_way_validation/primary_fuel_shift_evdc_minus_ev.png)
+
 ## Future Extension
 
-The next required step is to rerun the full three-way workflow with the refactored inputs and regenerate:
+The next substantive extension work is no longer validation refresh. The main remaining modeling extensions are:
 
-- `baseline`
-- `SSP + EV`
-- `SSP + EV + datacenter`
+- refining the data-center regionalization if a stronger public regional evidence base becomes available
+- adding explicit EV detail beyond passenger light-duty road transport
 
-After that, the repository should replace the old three-way validation CSVs and figures with outputs generated from the archived single-edition source packages.
-
-The design and evidence note remains in [docs/datacenter_sector_plan.md](docs/datacenter_sector_plan.md).
+The data-center design and evidence note remains in [docs/datacenter_sector_plan.md](docs/datacenter_sector_plan.md).
 
 To verify that the EV batch keeps all non-transport SSP inputs aligned with the stock GCAM SSP batch:
 
@@ -567,7 +595,6 @@ python3 scripts/check_batch_alignment.py --gcam-root /path/to/gcam-v7.0-Mac_arm6
 - `SSP3` and `SSP4` currently reuse the same `STEPS` EV anchor path because the chosen single EV edition does not expose a distinct public global weak-policy EV pathway that can be archived alongside `STEPS / APS / NZE`.
 - The EV overlay still uses the public `2023 BEV stock share = 70%` as a proxy for the within-EV `BEV/PHEV/FCEV` mix; this is transparent and source-based, but it is not a direct IEA sales table.
 - The datacenter overlay still requires a tiny `2015` seed and an income-elasticity inversion to fit GCAM's `energy-final-demand` structure.
-- The refreshed validation figures currently cover `baseline vs EV`; the `baseline vs EV vs EV+datacenter` three-way figures still need to be regenerated after the current EV refactor.
 - The repository currently targets passenger light-duty road transport. It does not yet add separate EV detail for buses, trucks, two-wheelers, or non-road transport.
 
 ## References
